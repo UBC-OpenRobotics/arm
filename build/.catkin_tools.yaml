@@ -1,0 +1,6 @@
+devel_space: /home/jonathan/Development/PythonProjects/arm/devel
+install: false
+install_space: /home/jonathan/Development/PythonProjects/arm/install
+profile: default
+source_space: /home/jonathan/Development/PythonProjects/arm/src
+workspace: /home/jonathan/Development/PythonProjects/arm

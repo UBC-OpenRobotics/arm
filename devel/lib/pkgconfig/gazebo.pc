@@ -1,0 +1,1 @@
+/home/jonathan/Development/PythonProjects/arm/devel/.private/gazebo/lib/pkgconfig/gazebo.pc

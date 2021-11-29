@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- load URDF -->
+  <param name="robot_description" command="$(find xacro)/xacro '$(find arm_urdf)/urdf/main.xacro'" />
+
+  <!-- define robot name -->
+  <arg name="robot_name" value="arm1"/>
+  
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" >
+    <param name="use_gui" value="TRUE" />
+
+    <!-- default joint angles -->
+    <rosparam>
+     zeros:
+       ${arg robot_name}_base-bridge_joint           : 0
+       ${arg robot_name}_bridge-housing_joint        : 0
+       ${arg robot_name}_housing-wrist_link_joint    : 0
+       ${arg robot_name}_wrist_link-wrist_cuff_joint : 0
+    </rosparam>
+  </node>
+
+  <!-- a node example of how to read the joint states and print to terminal -->
+  <node name="joint_reader" pkg="arm_urdf" type="joint_reader.py" output="screen"/>
+
+  <!-- start rviz renderer -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find arm_urdf)/config/view_arm.rviz" required="true" />
+</launch>

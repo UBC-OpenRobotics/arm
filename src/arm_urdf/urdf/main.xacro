@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="robot">
+
+    <!-- include statements, much like import statements -->
+    <xacro:include filename="$(find arm_urdf)/urdf/arm_urdf.xacro"/>
+    <xacro:include filename="$(find arm_urdf)/urdf/arm_gazebo.xacro"/>
+    <xacro:include filename="$(find arm_urdf)/urdf/arm_control.xacro"/>
+
+    <!-- name must be kept as "world" for it is a Gazebo keyword for world origin -->
+    <link name="world"/>
+
+    <!-- using arm macro defined in arm_urdf.xacro to define robot -->
+    <xacro:arm prefix="arm1"/>
+    <xacro:arm_gazebo_setting prefix="arm1"/>
+    <xacro:arm_control_setting prefix="arm1" />
+
+    <!-- connect the arm to world with fixed joint -->
+    <joint name="base" type="fixed">
+        <parent link="world" />
+        <child link="arm1_base" />
+    </joint>
+
+    <!-- NOTE: order of execution of above xacro does not matter -->
+</robot>
+
