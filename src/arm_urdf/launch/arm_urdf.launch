@@ -22,7 +22,7 @@
   </node>
 
   <!-- a node example of how to read the joint states and print to terminal -->
-  <node name="joint_reader" pkg="arm_urdf" type="joint_reader.py" output="screen"/>
+  <!-- <node name="joint_reader" pkg="arm_urdf" type="joint_reader.py" output="screen"/> -->
 
   <!-- start rviz renderer -->
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find arm_urdf)/config/view_arm.rviz" required="true" />

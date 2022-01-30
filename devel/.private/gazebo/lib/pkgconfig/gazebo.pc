@@ -1,8 +1,0 @@
-prefix=/home/jonathan/Development/PythonProjects/arm/devel/.private/gazebo
-
-Name: gazebo
-Description: Description of gazebo
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

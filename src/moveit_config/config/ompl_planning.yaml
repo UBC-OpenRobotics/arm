@@ -154,5 +154,5 @@ arm:
     - LazyPRMstar
     - SPARS
     - SPARStwo
-  projection_evaluator: joints(arm1_base-bridge_joint,arm1_bridge-housing_joint)
+  projection_evaluator: joints(arm1_base_bridge_joint,arm1_bridge_housing_joint)
   longest_valid_segment_fraction: 0.005
