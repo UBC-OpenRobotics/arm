@@ -42,45 +42,49 @@ print("")
 
 print("current pose: ", move_group.get_current_pose().pose)
 
-joint_goal = move_group.get_current_joint_values()
-joint_goal[0] = 0
-joint_goal[1] = 0 #pi / 4
-joint_goal[2] = 0
-joint_goal[3] = 0 #pi / 4
+for i in range(30):
+    print(f"[{i}] resetting position")
+    joint_goal = move_group.get_current_joint_values()
+    joint_goal[0] = 0
+    joint_goal[1] = 0 #pi / 4
+    joint_goal[2] = 0
+    joint_goal[3] = 0 #pi / 4
 
-# The go command can be called with joint values, poses, or without any
-# parameters if you have already set the pose or joint target for the group
-move_group.go(joint_goal, wait=True)
+    # The go command can be called with joint values, poses, or without any
+    # parameters if you have already set the pose or joint target for the group
+    move_group.go(joint_goal, wait=True)
 
-# Calling ``stop()`` ensures that there is no residual movement
-move_group.stop()
-print("current pose: ", move_group.get_current_pose().pose)
-
-
-pose_goal = geometry_msgs.msg.Pose()
-
-pose_goal.position.x = 0.000000
-pose_goal.position.y = -0.11826354658766348
-pose_goal.position.z = 0.53000000000000000000000000
-
-pose_goal.orientation.x = 0.7074552029005028
-pose_goal.orientation.y = -2.705443833806829e-07
-pose_goal.orientation.z = 0.0005450587139244744
-pose_goal.orientation.w = 0.7067579775283286
+    # Calling ``stop()`` ensures that there is no residual movement
+    move_group.stop()
+    print(f"[{i}] go to pose position")
 
 
 
-# move_group.set_goal_tolerance(0.1)
-# move_group.set_planning_time(10)
-move_group.set_pose_target(pose_goal)
+    pose_goal = geometry_msgs.msg.Pose()
+
+    pose_goal.position.x = 0.000000
+    pose_goal.position.y = -0.11826354658766348
+    pose_goal.position.z = 0.35000000000000000000000000
+
+    pose_goal.orientation.x = 0.7074552029005028
+    pose_goal.orientation.y = -2.705443833806829e-07
+    pose_goal.orientation.z = 0.0005450587139244744
+    pose_goal.orientation.w = 0.7067579775283286
 
 
-plan = move_group.go(wait=True)
-# Calling `stop()` ensures that there is no residual movement
-move_group.stop()
-# It is always good to clear your targets after planning with poses.
-# Note: there is no equivalent function for clear_joint_value_targets()
-move_group.clear_pose_targets()
+
+    # move_group.set_goal_tolerance(0.1)
+    move_group.set_planning_time(60)
+    move_group.set_num_planning_attempts(5)
+    move_group.set_pose_target(pose_goal)
+
+
+    plan = move_group.go(wait=True)
+    # Calling `stop()` ensures that there is no residual movement
+    move_group.stop()
+    # It is always good to clear your targets after planning with poses.
+    # Note: there is no equivalent function for clear_joint_value_targets()
+    move_group.clear_pose_targets()
 
 
 # # check if pose is valid source: https://answers.ros.org/question/240723/fail-aborted-no-motion-plan-found-no-execution-attempted/
