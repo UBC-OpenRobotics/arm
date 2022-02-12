@@ -13,6 +13,11 @@ joint_limits:
     max_velocity: 0.5
     has_acceleration_limits: false
     max_acceleration: 0
+  arm1_base_fixed_base_joint:
+    has_velocity_limits: true
+    max_velocity: 0.5
+    has_acceleration_limits: false
+    max_acceleration: 0
   arm1_bridge_housing_joint:
     has_velocity_limits: true
     max_velocity: 0.5

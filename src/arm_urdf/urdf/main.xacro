@@ -17,7 +17,7 @@
     <!-- connect the arm to world with fixed joint -->
     <joint name="base" type="fixed">
         <parent link="world" />
-        <child link="arm1_base" />
+        <child link="arm1_base_fixed" />
     </joint>
 
     <!-- NOTE: order of execution of above xacro does not matter -->

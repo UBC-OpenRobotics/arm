@@ -1,0 +1,11 @@
+controller_list:
+  - name: arm_position_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: True
+    joints:
+      - arm1_base_bridge_joint
+      - arm1_bridge_housing_joint
+      - arm1_housing_wrist_link_joint
+      - arm1_wrist_link_wrist_cuff_joint
+      - arm1_base_fixed_base_joint

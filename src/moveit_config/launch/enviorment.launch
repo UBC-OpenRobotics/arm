@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="use_gazebo" default="true" />
+
+    <include file="$(find moveit_config)/launch/demo.launch" unless="$(arg use_gazebo)"/>
+    <include file="$(find moveit_config)/launch/gazebo.launch" if="$(arg use_gazebo)"/>
+
+    <include file="$(find moveit_config)/launch/move_group.launch" if="$(arg use_gazebo)">
+        <arg name="allow_trajectory_execution" value="true"/>
+        <arg name="fake_execution_type" value="interpolate"/>
+        <arg name="info" value="true"/>
+        <arg name="load_robot_description" value="true"/>
+    </include>
+
+</launch>

@@ -3,6 +3,15 @@
     <xacro:macro name="arm" params="prefix">
 
         <!-- links -->
+        <link name="${prefix}_base_fixed">
+
+
+            <inertial>
+            <mass value="0.5"/>
+            <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+            </inertial>
+        </link>
+
         <link name="${prefix}_base">
             <visual>
             <origin rpy="0.0 0 0" xyz="0 0 0"/>
@@ -132,6 +141,16 @@
 
         <!-- joints -->
         <!-- joint names defined like so: ${prefix}_<parent>-<child>_joint -->
+        <joint name="${prefix}_base_fixed_base_joint" type="revolute">
+            <origin rpy="0.0 0 0" xyz="0.0 0 0"/>
+            <axis xyz="0 0 1"/>
+            <limit effort="1000.0" lower="${radians(-180)}" upper="${radians(180)}" velocity="0.5"/>
+            <parent link="${prefix}_base_fixed" />
+            <child link="${prefix}_base" />
+
+            <dynamics D="1" K="7000" mu_coulomb="0" mu_viscous="16" damping="0.003" friction="0.0"/>
+        </joint>
+
         <joint name="${prefix}_base_bridge_joint" type="revolute">
             <origin rpy="0.0 0 0" xyz="0.0 0 0.165"/>
             <axis xyz="1 0 0"/>

@@ -1,0 +1,8 @@
+prefix=/home/jonathan/Development/PythonProjects/arm/install
+
+Name: arm_control
+Description: Description of arm_control
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

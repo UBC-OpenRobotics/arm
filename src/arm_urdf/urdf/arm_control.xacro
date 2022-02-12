@@ -16,7 +16,7 @@
             </transmission>
         </xacro:macro>
 
-
+        <xacro:arm_control transmission="${prefix}_tran_0" joint="${prefix}_base_fixed_base_joint" motor="${prefix}_motor_0"/>
         <xacro:arm_control transmission="${prefix}_tran_1" joint="${prefix}_base_bridge_joint" motor="${prefix}_motor_1"/>
         <xacro:arm_control transmission="${prefix}_tran_2" joint="${prefix}_bridge_housing_joint" motor="${prefix}_motor_2"/>
         <xacro:arm_control transmission="${prefix}_tran_3" joint="${prefix}_housing_wrist_link_joint" motor="${prefix}_motor_3"/>
