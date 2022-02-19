@@ -9,3 +9,4 @@
 
 - [MoveIt-Gazebo](./src/moveit_config/README/README.md)
 
+- [Control](./src/arm_control/README/README.md)

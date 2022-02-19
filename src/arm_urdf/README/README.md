@@ -38,7 +38,7 @@ World origin link is named "base_link" in this case -->
 
 ***Execute following command in termial:***
 
-```shell
+```bash
 # only need to be sourced once for every new terminal session
 source <path to workspace>/devel/setup.bash
 
