@@ -16,7 +16,7 @@ The arm is controlled with python script located in ```arm/src/arm_control/scrip
 
 **NOTE: This runs the main node, enviorment should be ran before the main node.** 
 
-See [move_config](./src/moveit_config/README/README.md) package for specifics of the enviorment.
+See [move_config](../../../src/moveit_config/README/README.md) package for specifics of the enviorment.
 
 To run the main node use the following commands.
 ```bash
