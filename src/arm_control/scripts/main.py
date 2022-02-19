@@ -12,6 +12,7 @@ from math import pi
 from std_msgs.msg import String
 from moveit_commander.conversions import pose_to_list
 import random
+import math
 
 # docs: https://github.com/ros-planning/moveit/tree/ee48dc5cedc981d0869352aa3db0b41469c2735c
 ##############################
@@ -32,6 +33,8 @@ move_group = moveit_commander.MoveGroupCommander(group_name)
 move_group.set_planning_time(sample_time_out)
 move_group.set_num_planning_attempts(5)
 move_group.set_goal_tolerance(goal_tolerance)
+move_group.set_max_velocity_scaling_factor(1)
+move_group.set_max_acceleration_scaling_factor(0.3)
 
 
 
@@ -75,12 +78,24 @@ def go_joint(goal):
     move_group.go(joints=goal, wait=True)
     move_group.stop()
 
+def f(goal, tolerance):
+    current_pose = move_group.get_current_pose()
+
 
 ##############################
 # main loop
 ##############################
 
 while (True):
-    go_ik(move_group.get_random_pose().pose)
+    print(f"Success: {go_ik(move_group.get_random_pose().pose)}")
+    
+
+# for i in range(1):
+#     pose_goal = geometry_msgs.msg.Pose()
+#     pose_goal.position.x = -0.3
+#     pose_goal.position.y = 0.23
+#     pose_goal.position.z = 0.45
+
+#     print(f"success: {go_ik(pose_goal)} xyz: ({pose_goal.position.x}, {pose_goal.position.y}, {pose_goal.position.z})")
 
 
