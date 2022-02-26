@@ -1,6 +1,12 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="robot">
+    <xacro:property name="camera_link_name" value="arm_base_camera" />
+    <xacro:property name="camera_name" value="kinect"/> 
+    <xacro:property name="frame_name" value="kinect_frame"/>
+    <xacro:property name="view_angle" value="30" />  
+
     <xacro:macro name="arm" params="prefix">
+    
 
         <!-- links -->
         <link name="${prefix}_base_fixed">
@@ -150,29 +156,6 @@
             </inertial>
         </link>
 
-        <!-- camera link -->
-        <link name="${prefix}_base_camera">
-            <visual>
-            <origin rpy="0.0 ${radians(180)} 0" xyz="0 0.06 0.043"/>
-            <geometry>
-                <box size="0.05 0.05 0.08"/>
-            </geometry>
-            </visual>
-
-            <collision>
-            <origin rpy="0.0 ${radians(180)} 0" xyz="0 0.06 0.043"/>
-            <geometry>
-                <box size="0.05 0.05 0.08"/>
-            </geometry>
-            </collision>
-
-            <inertial>
-            <mass value="0.5"/>
-            <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
-            </inertial>
-        </link>
-
-
         <!-- joints -->
         <!-- joint names defined like so: ${prefix}_<parent>_<child>_joint -->
         <joint name="${prefix}_base_fixed_base_joint" type="revolute">
@@ -231,12 +214,34 @@
             <dynamics D="1" K="7000" mu_coulomb="0" mu_viscous="16" damping="0.003" friction="0.0"/>
         </joint>
 
-        <!-- camera joint -->
-        <joint name="${prefix}_base_camera_joint" type="fixed">
-            <origin rpy="0 ${pi/2} 0" xyz="0.15 0 0.8"/>
-            <parent link="${prefix}_base_fixed" />
-            <child link="${prefix}_base_camera" />
-        </joint>
+        <!-- camera -->
+        <!-- camera link -->
+        <link name="arm_base_camera">
+            <visual>
+            <origin rpy="0.0 ${radians(180)} 0" xyz="0 0.06 0.043"/>
+            <geometry>
+                <box size="0.05 0.05 0.08"/>
+            </geometry>
+            </visual>
 
+            <collision>
+            <origin rpy="0.0 ${radians(180)} 0" xyz="0 0.06 0.043"/>
+            <geometry>
+                <box size="0.05 0.05 0.08"/>
+            </geometry>
+            </collision>
+
+            <inertial>
+            <mass value="0.5"/>
+            <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+            </inertial>
+        </link>
+
+        <!-- camera joint -->
+        <joint name="arm_base_camera_joint" type="fixed">
+            <origin rpy="0 ${radians(view_angle)} 0" xyz="0.15 0 0.8"/>
+            <parent link="${prefix}_base_fixed" />
+            <child link="arm_base_camera" />
+        </joint>
     </xacro:macro>
 </robot>
