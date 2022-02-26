@@ -151,7 +151,7 @@
         </link>
 
         <!-- camera link -->
-        <link name="${prefix}_camera">
+        <link name="${prefix}_base_camera">
             <visual>
             <origin rpy="0.0 ${radians(180)} 0" xyz="0 0.06 0.043"/>
             <geometry>
@@ -232,10 +232,10 @@
         </joint>
 
         <!-- camera joint -->
-        <joint name="${prefix}_wrist_link_camera_joint" type="fixed">
-            <origin rpy="0 0 0" xyz="0 0.0 0"/>
-            <parent link="${prefix}_wrist_link" />
-            <child link="${prefix}_camera" />
+        <joint name="${prefix}_base_camera_joint" type="fixed">
+            <origin rpy="0 ${pi/2} 0" xyz="0.15 0 0.8"/>
+            <parent link="${prefix}_base_fixed" />
+            <child link="${prefix}_base_camera" />
         </joint>
 
     </xacro:macro>
