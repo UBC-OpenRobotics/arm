@@ -21,6 +21,11 @@
         <xacro:arm_control transmission="${prefix}_tran_2" joint="${prefix}_bridge_housing_joint" motor="${prefix}_motor_2"/>
         <xacro:arm_control transmission="${prefix}_tran_3" joint="${prefix}_housing_wrist_link_joint" motor="${prefix}_motor_3"/>
         <xacro:arm_control transmission="${prefix}_tran_4" joint="${prefix}_wrist_link_wrist_cuff_joint" motor="${prefix}_motor_4"/>
+        <xacro:arm_control transmission="${prefix}_tran_5" joint="${prefix}_palm_hub_left_joint" motor="${prefix}_motor_5"/>
+        <xacro:arm_control transmission="${prefix}_tran_6" joint="${prefix}_hub_left_finger_left_joint" motor="${prefix}_motor_6"/>
+        <xacro:arm_control transmission="${prefix}_tran_7" joint="${prefix}_palm_hub_right_joint" motor="${prefix}_motor_7"/>
+        <xacro:arm_control transmission="${prefix}_tran_8" joint="${prefix}_hub_right_finger_right_joint" motor="${prefix}_motor_8"/>
+        <xacro:arm_control transmission="${prefix}_tran_9" joint="${prefix}_palm_finger_thumb_joint" motor="${prefix}_motor_9"/>
         
 
     </xacro:macro>

@@ -1,5 +1,8 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="robot">
+    <!-- import  -->
+    <xacro:include filename="$(find arm_urdf)/urdf/gripper_urdf.xacro"/>
+
     <xacro:macro name="arm" params="prefix">
 
         <!-- links -->
@@ -151,18 +154,18 @@
         </link>
 
         <!-- camera link -->
-        <link name="${prefix}_camera">
+        <link name="${prefix}_camera_link">
             <visual>
-            <origin rpy="0.0 ${radians(180)} 0" xyz="0 0.06 0.043"/>
+            <origin rpy="0.0 ${radians(180)} 0" xyz="0 0 0"/>
             <geometry>
-                <box size="0.05 0.05 0.08"/>
+                <box size="0.08 0.05 0.05"/>
             </geometry>
             </visual>
 
             <collision>
-            <origin rpy="0.0 ${radians(180)} 0" xyz="0 0.06 0.043"/>
+            <origin rpy="0.0 ${radians(180)} 0" xyz="0 0 0"/>
             <geometry>
-                <box size="0.05 0.05 0.08"/>
+                <box size="0.08 0.05 0.05"/>
             </geometry>
             </collision>
 
@@ -171,6 +174,9 @@
             <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
             </inertial>
         </link>
+
+        <!-- gripper -->
+        <xacro:gripper prefix="${prefix}"/>
 
 
         <!-- joints -->
@@ -232,10 +238,17 @@
         </joint>
 
         <!-- camera joint -->
-        <joint name="${prefix}_wrist_link_camera_joint" type="fixed">
-            <origin rpy="0 0 0" xyz="0 0.0 0"/>
-            <parent link="${prefix}_wrist_link" />
-            <child link="${prefix}_camera" />
+        <joint name="${prefix}_base_fixed_camera_link_joint" type="fixed">
+            <origin rpy="0 0 0" xyz="0.2 0 0.3"/>
+            <parent link="${prefix}_base_fixed" />
+            <child link="${prefix}_camera_link" />
+        </joint>
+
+        <!-- gripper joint  -->
+        <joint name="${prefix}_wrist_cuff_palm_joint" type="fixed">
+            <origin rpy="0 0 0" xyz="0 0.0 0.03"/>
+            <parent link="${prefix}_wrist_cuff" />
+            <child link="${prefix}_palm" />
         </joint>
 
     </xacro:macro>

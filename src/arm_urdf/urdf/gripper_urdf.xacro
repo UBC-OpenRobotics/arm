@@ -1,0 +1,191 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:macro name="gripper" params="prefix">
+
+        <!-- links -->
+        <link name="${prefix}_palm">
+            <visual>
+            <origin rpy="0 0 0" xyz="0 0 0.11"/>
+            <geometry>
+                <mesh filename="package://arm_urdf/meshes/Palm.dae"/>
+            </geometry>
+            </visual>
+
+            <collision>
+            <origin rpy="0 0 0" xyz="0 0 0.11"/>
+            <geometry>
+                <mesh filename="package://arm_urdf/meshes/Palm.dae"/>
+            </geometry>
+            </collision>
+
+            <inertial>
+            <mass value="0.5"/>
+            <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+            </inertial>
+        </link>
+
+        <!-- left finger -->
+        <link name="${prefix}_hub_left">
+            <visual>
+            <origin rpy="0 0 ${radians(90)}" xyz="0 0.02 0.002"/>
+            <geometry>
+                <mesh filename="package://arm_urdf/meshes/Hub Left.dae"/>
+            </geometry>
+            </visual>
+
+            <collision>
+            <origin rpy="0 0 ${radians(90)}" xyz="0 0.02 0.002"/>
+            <geometry>
+                <mesh filename="package://arm_urdf/meshes/Hub Left.dae"/>
+            </geometry>
+            </collision>
+
+            <inertial>
+            <mass value="0.5"/>
+            <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+            </inertial>
+        </link>
+
+        <link name="${prefix}_finger_left">
+            <visual>
+            <origin rpy="0 ${radians(90)} ${radians(90)}" xyz="-0.002 0 0.02"/>
+            <geometry>
+                <mesh filename="package://arm_urdf/meshes/Finger Assembly.dae"/>
+            </geometry>
+            </visual>
+
+            <collision>
+            <origin rpy="0 ${radians(90)} ${radians(90)}" xyz="-0.002 0 0.02"/>
+            <geometry>
+                <mesh filename="package://arm_urdf/meshes/Finger Assembly.dae"/>
+            </geometry>
+            </collision>
+
+            <inertial>
+            <mass value="0.5"/>
+            <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+            </inertial>
+        </link>
+
+        <!-- right finger -->
+        <link name="${prefix}_hub_right">
+            <visual>
+            <origin rpy="0 0 ${radians(90)}" xyz="0 0.02 0.002"/>
+            <geometry>
+                <mesh filename="package://arm_urdf/meshes/Hub Right.dae"/>
+            </geometry>
+            </visual>
+
+            <collision>
+            <origin rpy="0 0 ${radians(90)}" xyz="0 0.02 0.002"/>
+            <geometry>
+                <mesh filename="package://arm_urdf/meshes/Hub Right.dae"/>
+            </geometry>
+            </collision>
+
+            <inertial>
+            <mass value="0.5"/>
+            <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+            </inertial>
+        </link>
+
+        <link name="${prefix}_finger_right">
+            <visual>
+            <origin rpy="0 ${radians(90)} ${radians(90)}" xyz="-0.002 0 0.02"/>
+            <geometry>
+                <mesh filename="package://arm_urdf/meshes/Finger Assembly.dae"/>
+            </geometry>
+            </visual>
+
+            <collision>
+            <origin rpy="0 ${radians(90)} ${radians(90)}" xyz="-0.002 0 0.02"/>
+            <geometry>
+                <mesh filename="package://arm_urdf/meshes/Finger Assembly.dae"/>
+            </geometry>
+            </collision>
+
+            <inertial>
+            <mass value="0.5"/>
+            <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+            </inertial>
+        </link>
+
+        <link name="${prefix}_finger_thumb">
+            <visual>
+            <origin rpy="0 ${radians(90)} ${radians(90)}" xyz="-0.002 0 0.02"/>
+            <geometry>
+                <mesh filename="package://arm_urdf/meshes/Finger Assembly.dae"/>
+            </geometry>
+            </visual>
+
+            <collision>
+            <origin rpy="0 ${radians(90)} ${radians(90)}" xyz="-0.002 0 0.02"/>
+            <geometry>
+                <mesh filename="package://arm_urdf/meshes/Finger Assembly.dae"/>
+            </geometry>
+            </collision>
+
+            <inertial>
+            <mass value="0.5"/>
+            <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+            </inertial>
+        </link>
+
+        <!-- joints -->
+        <!-- joint names defined like so: ${prefix}_<parent>_<child>_joint -->
+
+        <!-- left finger joints  -->
+        <joint name="${prefix}_palm_hub_left_joint" type="revolute">
+            <origin rpy="0 0 0" xyz="-0.065 -0.038 0.068"/>
+            <axis xyz="1 0 0"/>
+            <limit effort="1000.0" lower="${radians(0)}" upper="${radians(35)}" velocity="0.5"/>
+            <parent link="${prefix}_palm" />
+            <child link="${prefix}_hub_left" />
+
+            <dynamics D="1" K="7000" mu_coulomb="0" mu_viscous="16" damping="0.003" friction="0.0"/>
+        </joint>
+
+        <joint name="${prefix}_hub_left_finger_left_joint" type="revolute">
+            <origin rpy="0 0 0" xyz="0.033 -0.0145 0.043"/>
+            <axis xyz="0 1 0"/>
+            <limit effort="1000.0" lower="${radians(-80)}" upper="${radians(15)}" velocity="0.5"/>
+            <parent link="${prefix}_hub_left" />
+            <child link="${prefix}_finger_left" />
+
+            <dynamics D="1" K="7000" mu_coulomb="0" mu_viscous="16" damping="0.003" friction="0.0"/>
+        </joint>
+
+        <!-- right finger joints  -->
+        <joint name="${prefix}_palm_hub_right_joint" type="revolute">
+            <origin rpy="0 0 0" xyz="-0.065 0.038 0.068"/>
+            <axis xyz="1 0 0"/>
+            <limit effort="1000.0" lower="${radians(-35)}" upper="${radians(0)}" velocity="0.5"/>
+            <parent link="${prefix}_palm" />
+            <child link="${prefix}_hub_right" />
+
+            <dynamics D="1" K="7000" mu_coulomb="0" mu_viscous="16" damping="0.003" friction="0.0"/>
+        </joint>
+
+        <joint name="${prefix}_hub_right_finger_right_joint" type="revolute">
+            <origin rpy="0 0 0" xyz="0.033 0.0025 0.043"/>
+            <axis xyz="0 1 0"/>
+            <limit effort="1000.0" lower="${radians(-80)}" upper="${radians(15)}" velocity="0.5"/>
+            <parent link="${prefix}_hub_right" />
+            <child link="${prefix}_finger_right" />
+
+            <dynamics D="1" K="7000" mu_coulomb="0" mu_viscous="16" damping="0.003" friction="0.0"/>
+        </joint>
+
+        <!-- thumb finger joint -->
+        <joint name="${prefix}_palm_finger_thumb_joint" type="revolute">
+            <origin rpy="0 0 ${radians(180)}" xyz="0.062 0.007 0.103"/>
+            <axis xyz="0 1 0"/>
+            <limit effort="1000.0" lower="${radians(-20)}" upper="${radians(10)}" velocity="0.5"/>
+            <parent link="${prefix}_palm" />
+            <child link="${prefix}_finger_thumb" />
+
+            <dynamics D="1" K="7000" mu_coulomb="0" mu_viscous="16" damping="0.003" friction="0.0"/>
+        </joint>
+
+    </xacro:macro>
+</robot>

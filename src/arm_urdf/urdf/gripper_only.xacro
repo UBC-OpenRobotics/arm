@@ -4,16 +4,14 @@
     <!-- ################################################### -->
     <!-- # include statements, much like import statements -->
     <!-- ################################################### -->
-    <xacro:include filename="$(find arm_urdf)/urdf/arm_urdf.xacro"/>
-    <xacro:include filename="$(find arm_urdf)/urdf/arm_gazebo.xacro"/>
-    <xacro:include filename="$(find arm_urdf)/urdf/arm_control.xacro"/>
+    <xacro:include filename="$(find arm_urdf)/urdf/gripper_urdf.xacro"/>
 
 
 
     <!-- ################################################### -->
     <!-- # constants -->
     <!-- ################################################### -->
-    <xacro:property name="arm_prefix" value="arm1" />
+    <xacro:property name="gripper_prefix" value="gripper1" />
     
 
 
@@ -25,17 +23,13 @@
     <!-- name must be kept as "world" for it is a Gazebo keyword for world origin -->
     <link name="world"/>
 
-    <!-- using arm macro defined in arm_urdf.xacro to define robot -->
-    <xacro:arm prefix="${arm_prefix}"/>
-    <xacro:arm_gazebo_setting prefix="${arm_prefix}"/>
-    <xacro:arm_control_setting prefix="${arm_prefix}" />
+    <!-- using gripper macro defined in gripper_urdf.xacro to define robot -->
+    <xacro:gripper prefix="${gripper_prefix}"/>
 
     <!-- connect the arm to world with fixed joint -->
     <joint name="base" type="fixed">
         <parent link="world" />
-        <child link="${arm_prefix}_base_fixed" />
+        <child link="${gripper_prefix}_palm" />
     </joint>
-
-    
 </robot>
 
