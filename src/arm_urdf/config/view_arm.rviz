@@ -4,6 +4,7 @@ Panels:
     Name: Displays
     Property Tree Widget:
       Expanded:
+        - /RobotModel1
         - /RobotModel1/Links1
       Splitter Ratio: 0.5
     Tree Height: 439
@@ -63,32 +64,72 @@ Visualization Manager:
         Link Tree Style: Links in Alphabetic Order
         arm1_base:
           Alpha: 1
-          Show Axes: true
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        arm1_base_fixed:
+          Alpha: 1
+          Show Axes: false
           Show Trail: false
           Value: true
         arm1_bridge:
           Alpha: 1
-          Show Axes: true
+          Show Axes: false
           Show Trail: false
           Value: true
         arm1_bridge2:
           Alpha: 1
-          Show Axes: true
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        arm1_camera_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        arm1_finger_left:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        arm1_finger_right:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        arm1_finger_thumb:
+          Alpha: 1
+          Show Axes: false
           Show Trail: false
           Value: true
         arm1_housing:
           Alpha: 1
-          Show Axes: true
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        arm1_hub_left:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        arm1_hub_right:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        arm1_palm:
+          Alpha: 1
+          Show Axes: false
           Show Trail: false
           Value: true
         arm1_wrist_cuff:
           Alpha: 1
-          Show Axes: true
+          Show Axes: false
           Show Trail: false
           Value: true
         arm1_wrist_link:
           Alpha: 1
-          Show Axes: true
+          Show Axes: false
           Show Trail: false
           Value: true
         world:
@@ -129,7 +170,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 1.0408097505569458
+      Distance: 1.1021573543548584
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -137,17 +178,17 @@ Visualization Manager:
         Value: false
       Field of View: 0.7853981852531433
       Focal Point:
-        X: -0.08615642040967941
-        Y: -0.03282848745584488
-        Z: 0.2998984158039093
+        X: 0.5042071342468262
+        Y: 0.2883015275001526
+        Z: 0.0490417443215847
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.5303978323936462
+      Pitch: 0.510397732257843
       Target Frame: <Fixed Frame>
-      Yaw: 0.49358195066452026
+      Yaw: 4.8099493980407715
     Saved: ~
 Window Geometry:
   Displays:

@@ -9,3 +9,13 @@ controller_list:
       - arm1_housing_wrist_link_joint
       - arm1_wrist_link_wrist_cuff_joint
       - arm1_base_fixed_base_joint
+  - name: gripper_position_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: True
+    joints:
+      - arm1_palm_finger_thumb_joint
+      - arm1_palm_hub_left_joint
+      - arm1_hub_left_finger_left_joint
+      - arm1_palm_hub_right_joint
+      - arm1_hub_right_finger_right_joint

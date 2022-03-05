@@ -1,9 +1,12 @@
 <?xml version="1.0"?>
 <launch>
     <arg name="use_gazebo" default="true" />
+    <arg name="gazebo_gui" default="true" />
 
     <include file="$(find moveit_config)/launch/demo.launch" unless="$(arg use_gazebo)"/>
-    <include file="$(find moveit_config)/launch/gazebo.launch" if="$(arg use_gazebo)"/>
+    <include file="$(find moveit_config)/launch/gazebo.launch" if="$(arg use_gazebo)">
+        <arg name="gazebo_gui" value="$(arg gazebo_gui)"/>
+    </include>
 
     <include file="$(find moveit_config)/launch/move_group.launch" if="$(arg use_gazebo)">
         <arg name="allow_trajectory_execution" value="true"/>

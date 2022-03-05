@@ -2,23 +2,22 @@
 <launch>
 
   <!-- load URDF -->
-  <param name="robot_description" command="$(find xacro)/xacro '$(find arm_urdf)/urdf/main.xacro'" />
+  <param name="robot_description" command="$(find xacro)/xacro '$(find arm_urdf)/urdf/gripper_only.xacro'" />
 
   <!-- define robot name -->
-  <arg name="robot_name" value="arm1"/>
+  <arg name="robot_name" value="gripper1"/>
   
-  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" output="screen" />
   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" >
-    <param name="use_gui" value="true" />
+    <param name="use_gui" value="TRUE" />
 
     <!-- default joint angles -->
     <rosparam subst_value="true">
      zeros:
-       $(arg robot_name)_base_fixed_base_joint       : 1
-       $(arg robot_name)_base_bridge_joint           : 0.23
-       $(arg robot_name)_bridge_housing_joint        : 0.71
-       $(arg robot_name)_housing_wrist_link_joint    : 0.9
-       $(arg robot_name)_wrist_link_wrist_cuff_joint : 0
+       $(arg robot_name)_palm_hub_left_joint          : 0
+       $(arg robot_name)_hub_left_finger_left_joint   : -1.39626
+       $(arg robot_name)_hub_right_finger_right_joint : -1.39626
+       $(arg robot_name)_palm_finger_thumb_joint      : -0.349066
     </rosparam>
   </node>
 
