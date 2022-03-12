@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/jonathan/Development/PythonProjects/arm/devel/.private/gazebo_worlds/setup.sh

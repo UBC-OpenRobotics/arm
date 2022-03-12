@@ -1,0 +1,8 @@
+prefix=/home/jonathan/Development/PythonProjects/arm/install
+
+Name: gazebo_worlds
+Description: Description of gazebo_worlds
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
