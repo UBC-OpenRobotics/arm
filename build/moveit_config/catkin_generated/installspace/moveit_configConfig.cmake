@@ -67,14 +67,14 @@ set(moveit_config_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(moveit_config_SOURCE_PREFIX /home/jonathan/Development/PythonProjects/arm/src/moveit_config)
-  set(moveit_config_DEVEL_PREFIX /home/jonathan/Development/PythonProjects/arm/devel/.private/moveit_config)
+  set(moveit_config_SOURCE_PREFIX /home/flora/arm/src/moveit_config)
+  set(moveit_config_DEVEL_PREFIX /home/flora/arm/devel/.private/moveit_config)
   set(moveit_config_INSTALL_PREFIX "")
   set(moveit_config_PREFIX ${moveit_config_DEVEL_PREFIX})
 else()
   set(moveit_config_SOURCE_PREFIX "")
   set(moveit_config_DEVEL_PREFIX "")
-  set(moveit_config_INSTALL_PREFIX /home/jonathan/Development/PythonProjects/arm/install)
+  set(moveit_config_INSTALL_PREFIX /home/flora/arm/install)
   set(moveit_config_PREFIX ${moveit_config_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/jonathan/Development/PythonProjects/arm/install/lib;/home/jonathan/Development/PythonProjects/arm/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/flora/arm/install/lib;/home/flora/arm/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

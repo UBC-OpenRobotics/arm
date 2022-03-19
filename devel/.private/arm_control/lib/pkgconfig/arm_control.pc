@@ -1,4 +1,4 @@
-prefix=/home/jonathan/Development/PythonProjects/arm/devel/.private/arm_control
+prefix=/home/flora/arm/devel/.private/arm_control
 
 Name: arm_control
 Description: Description of arm_control

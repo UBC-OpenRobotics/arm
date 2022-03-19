@@ -67,14 +67,14 @@ set(arm_control_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(arm_control_SOURCE_PREFIX /home/jonathan/Development/PythonProjects/arm/src/arm_control)
-  set(arm_control_DEVEL_PREFIX /home/jonathan/Development/PythonProjects/arm/devel/.private/arm_control)
+  set(arm_control_SOURCE_PREFIX /home/flora/arm/src/arm_control)
+  set(arm_control_DEVEL_PREFIX /home/flora/arm/devel/.private/arm_control)
   set(arm_control_INSTALL_PREFIX "")
   set(arm_control_PREFIX ${arm_control_DEVEL_PREFIX})
 else()
   set(arm_control_SOURCE_PREFIX "")
   set(arm_control_DEVEL_PREFIX "")
-  set(arm_control_INSTALL_PREFIX /home/jonathan/Development/PythonProjects/arm/install)
+  set(arm_control_INSTALL_PREFIX /home/flora/arm/install)
   set(arm_control_PREFIX ${arm_control_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/jonathan/Development/PythonProjects/arm/install/lib;/home/jonathan/Development/PythonProjects/arm/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/flora/arm/install/lib;/home/flora/arm/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

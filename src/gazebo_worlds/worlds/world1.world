@@ -11,7 +11,12 @@
     </include>
 
     <include>
-      <uri>model://003_cracker_box</uri>
+      <uri>model://003_cracker_box_textured</uri>
+      <pose>0 3 5 2.5 2.5 0</pose>
+    </include>
+    <include>
+      <uri>model://007_tuna_fish_can_textured</uri>
+      <pose>0 4 5 2.5 2.5 0</pose>
     </include>
   </world>
 </sdf>

@@ -1,4 +1,4 @@
-prefix=/home/jonathan/Development/PythonProjects/arm/install
+prefix=/home/flora/arm/install
 
 Name: arm_control
 Description: Description of arm_control

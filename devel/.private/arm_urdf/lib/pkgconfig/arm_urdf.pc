@@ -1,4 +1,4 @@
-prefix=/home/jonathan/Development/PythonProjects/arm/devel/.private/arm_urdf
+prefix=/home/flora/arm/devel/.private/arm_urdf
 
 Name: arm_urdf
 Description: Description of arm_urdf

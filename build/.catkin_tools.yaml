@@ -1,6 +1,6 @@
-devel_space: /home/jonathan/Development/PythonProjects/arm/devel
+devel_space: /home/flora/arm/devel
 install: false
-install_space: /home/jonathan/Development/PythonProjects/arm/install
+install_space: /home/flora/arm/install
 profile: default
-source_space: /home/jonathan/Development/PythonProjects/arm/src
-workspace: /home/jonathan/Development/PythonProjects/arm
+source_space: /home/flora/arm/src
+workspace: /home/flora/arm

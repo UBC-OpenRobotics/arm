@@ -1,4 +1,4 @@
-prefix=/home/jonathan/Development/PythonProjects/arm/install
+prefix=/home/flora/arm/install
 
 Name: moveit_config
 Description: Description of moveit_config
