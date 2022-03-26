@@ -1,0 +1,5 @@
+string arm_command     # Goal field
+---                   # Separator
+bool success # Result field
+---                   # Separator
+string feedback_message # Feedback field

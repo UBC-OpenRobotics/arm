@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+
+  <arg name="use_gazebo" value="true" />
+
+  <!-- <include file="$(find moveit_config)/launch/enviorment.launch">
+    <arg name="use_gazebo" value="$(arg use_gazebo)"/>
+  </include> -->
+  
+  <node name="arm_command_action_server" pkg="arm_control" type="arm_command_action_server.py"  respawn="false" output="screen"/>
+</launch>

@@ -2,7 +2,7 @@
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/jonathan/Development/PythonProjects/arm/install")
+  set(CMAKE_INSTALL_PREFIX "/home/ywishahy/UBCOpenRobotics/arm/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/jonathan/Development/PythonProjects/arm/build/arm_urdf/gtest/googlemock/cmake_install.cmake")
+  include("/home/ywishahy/UBCOpenRobotics/arm/build/arm_urdf/gtest/googlemock/cmake_install.cmake")
 
 endif()
 

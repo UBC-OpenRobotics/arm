@@ -1,4 +1,4 @@
-prefix=/home/jonathan/Development/PythonProjects/arm/install
+prefix=/home/ywishahy/UBCOpenRobotics/arm/install
 
 Name: moveit_config
 Description: Description of moveit_config

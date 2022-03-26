@@ -54,7 +54,7 @@ def go_ik(goal):
     specified by goal, blocks until either inverse kinematics fails 
     to find path or it has reached the goal within tolerace.
 
-    Args: 
+    Args: communicate
         goal (Pose):  pose object that specifies 
             arm head's goal transform
     returns: 
@@ -88,8 +88,8 @@ def go_joint(group, goal):
 ##############################
 
 while (True):
-    # print(f"Success: {go_ik(move_group.get_random_pose().pose)}")
-    go_joint(gripper_group, gripper_group.get_random_joint_values())
+    print(f"Success: {go_ik(move_group.get_random_pose().pose)}")
+    # go_joint(gripper_group, gripper_group.get_random_joint_values())
 
     
 

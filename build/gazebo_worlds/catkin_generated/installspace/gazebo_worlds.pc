@@ -1,4 +1,4 @@
-prefix=/home/jonathan/Development/PythonProjects/arm/install
+prefix=/home/ywishahy/UBCOpenRobotics/arm/install
 
 Name: gazebo_worlds
 Description: Description of gazebo_worlds

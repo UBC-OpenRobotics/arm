@@ -1,8 +1,8 @@
-# Install script for directory: /home/jonathan/Development/PythonProjects/arm/src/arm_control
+# Install script for directory: /home/ywishahy/UBCOpenRobotics/arm/src/arm_control
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/jonathan/Development/PythonProjects/arm/install")
+  set(CMAKE_INSTALL_PREFIX "/home/ywishahy/UBCOpenRobotics/arm/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -49,103 +49,155 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/jonathan/Development/PythonProjects/arm/install/_setup_util.py")
+   "/home/ywishahy/UBCOpenRobotics/arm/install/_setup_util.py")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/jonathan/Development/PythonProjects/arm/install" TYPE PROGRAM FILES "/home/jonathan/Development/PythonProjects/arm/build/arm_control/catkin_generated/installspace/_setup_util.py")
+file(INSTALL DESTINATION "/home/ywishahy/UBCOpenRobotics/arm/install" TYPE PROGRAM FILES "/home/ywishahy/UBCOpenRobotics/arm/build/arm_control/catkin_generated/installspace/_setup_util.py")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/jonathan/Development/PythonProjects/arm/install/env.sh")
+   "/home/ywishahy/UBCOpenRobotics/arm/install/env.sh")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/jonathan/Development/PythonProjects/arm/install" TYPE PROGRAM FILES "/home/jonathan/Development/PythonProjects/arm/build/arm_control/catkin_generated/installspace/env.sh")
+file(INSTALL DESTINATION "/home/ywishahy/UBCOpenRobotics/arm/install" TYPE PROGRAM FILES "/home/ywishahy/UBCOpenRobotics/arm/build/arm_control/catkin_generated/installspace/env.sh")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/jonathan/Development/PythonProjects/arm/install/setup.bash;/home/jonathan/Development/PythonProjects/arm/install/local_setup.bash")
+   "/home/ywishahy/UBCOpenRobotics/arm/install/setup.bash;/home/ywishahy/UBCOpenRobotics/arm/install/local_setup.bash")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/jonathan/Development/PythonProjects/arm/install" TYPE FILE FILES
-    "/home/jonathan/Development/PythonProjects/arm/build/arm_control/catkin_generated/installspace/setup.bash"
-    "/home/jonathan/Development/PythonProjects/arm/build/arm_control/catkin_generated/installspace/local_setup.bash"
+file(INSTALL DESTINATION "/home/ywishahy/UBCOpenRobotics/arm/install" TYPE FILE FILES
+    "/home/ywishahy/UBCOpenRobotics/arm/build/arm_control/catkin_generated/installspace/setup.bash"
+    "/home/ywishahy/UBCOpenRobotics/arm/build/arm_control/catkin_generated/installspace/local_setup.bash"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/jonathan/Development/PythonProjects/arm/install/setup.sh;/home/jonathan/Development/PythonProjects/arm/install/local_setup.sh")
+   "/home/ywishahy/UBCOpenRobotics/arm/install/setup.sh;/home/ywishahy/UBCOpenRobotics/arm/install/local_setup.sh")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/jonathan/Development/PythonProjects/arm/install" TYPE FILE FILES
-    "/home/jonathan/Development/PythonProjects/arm/build/arm_control/catkin_generated/installspace/setup.sh"
-    "/home/jonathan/Development/PythonProjects/arm/build/arm_control/catkin_generated/installspace/local_setup.sh"
+file(INSTALL DESTINATION "/home/ywishahy/UBCOpenRobotics/arm/install" TYPE FILE FILES
+    "/home/ywishahy/UBCOpenRobotics/arm/build/arm_control/catkin_generated/installspace/setup.sh"
+    "/home/ywishahy/UBCOpenRobotics/arm/build/arm_control/catkin_generated/installspace/local_setup.sh"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/jonathan/Development/PythonProjects/arm/install/setup.zsh;/home/jonathan/Development/PythonProjects/arm/install/local_setup.zsh")
+   "/home/ywishahy/UBCOpenRobotics/arm/install/setup.zsh;/home/ywishahy/UBCOpenRobotics/arm/install/local_setup.zsh")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/jonathan/Development/PythonProjects/arm/install" TYPE FILE FILES
-    "/home/jonathan/Development/PythonProjects/arm/build/arm_control/catkin_generated/installspace/setup.zsh"
-    "/home/jonathan/Development/PythonProjects/arm/build/arm_control/catkin_generated/installspace/local_setup.zsh"
+file(INSTALL DESTINATION "/home/ywishahy/UBCOpenRobotics/arm/install" TYPE FILE FILES
+    "/home/ywishahy/UBCOpenRobotics/arm/build/arm_control/catkin_generated/installspace/setup.zsh"
+    "/home/ywishahy/UBCOpenRobotics/arm/build/arm_control/catkin_generated/installspace/local_setup.zsh"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/jonathan/Development/PythonProjects/arm/install/.rosinstall")
+   "/home/ywishahy/UBCOpenRobotics/arm/install/.rosinstall")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/jonathan/Development/PythonProjects/arm/install" TYPE FILE FILES "/home/jonathan/Development/PythonProjects/arm/build/arm_control/catkin_generated/installspace/.rosinstall")
+file(INSTALL DESTINATION "/home/ywishahy/UBCOpenRobotics/arm/install" TYPE FILE FILES "/home/ywishahy/UBCOpenRobotics/arm/build/arm_control/catkin_generated/installspace/.rosinstall")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/jonathan/Development/PythonProjects/arm/build/arm_control/catkin_generated/installspace/arm_control.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/arm_control/srv" TYPE FILE FILES "/home/ywishahy/UBCOpenRobotics/arm/src/arm_control/srv/ArmCommand.srv")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/arm_control/action" TYPE FILE FILES "/home/ywishahy/UBCOpenRobotics/arm/src/arm_control/action/ArmCommand.action")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/arm_control/msg" TYPE FILE FILES
+    "/home/ywishahy/UBCOpenRobotics/arm/devel/.private/arm_control/share/arm_control/msg/ArmCommandAction.msg"
+    "/home/ywishahy/UBCOpenRobotics/arm/devel/.private/arm_control/share/arm_control/msg/ArmCommandActionGoal.msg"
+    "/home/ywishahy/UBCOpenRobotics/arm/devel/.private/arm_control/share/arm_control/msg/ArmCommandActionResult.msg"
+    "/home/ywishahy/UBCOpenRobotics/arm/devel/.private/arm_control/share/arm_control/msg/ArmCommandActionFeedback.msg"
+    "/home/ywishahy/UBCOpenRobotics/arm/devel/.private/arm_control/share/arm_control/msg/ArmCommandGoal.msg"
+    "/home/ywishahy/UBCOpenRobotics/arm/devel/.private/arm_control/share/arm_control/msg/ArmCommandResult.msg"
+    "/home/ywishahy/UBCOpenRobotics/arm/devel/.private/arm_control/share/arm_control/msg/ArmCommandFeedback.msg"
+    )
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/arm_control/cmake" TYPE FILE FILES "/home/ywishahy/UBCOpenRobotics/arm/build/arm_control/catkin_generated/installspace/arm_control-msg-paths.cmake")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/ywishahy/UBCOpenRobotics/arm/devel/.private/arm_control/include/arm_control")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/ywishahy/UBCOpenRobotics/arm/devel/.private/arm_control/share/roseus/ros/arm_control")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/ywishahy/UBCOpenRobotics/arm/devel/.private/arm_control/share/common-lisp/ros/arm_control")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/ywishahy/UBCOpenRobotics/arm/devel/.private/arm_control/share/gennodejs/ros/arm_control")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  execute_process(COMMAND "/usr/bin/python3" -m compileall "/home/ywishahy/UBCOpenRobotics/arm/devel/.private/arm_control/lib/python3/dist-packages/arm_control")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages" TYPE DIRECTORY FILES "/home/ywishahy/UBCOpenRobotics/arm/devel/.private/arm_control/lib/python3/dist-packages/arm_control")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/ywishahy/UBCOpenRobotics/arm/build/arm_control/catkin_generated/installspace/arm_control.pc")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/arm_control/cmake" TYPE FILE FILES "/home/ywishahy/UBCOpenRobotics/arm/build/arm_control/catkin_generated/installspace/arm_control-msg-extras.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/arm_control/cmake" TYPE FILE FILES
-    "/home/jonathan/Development/PythonProjects/arm/build/arm_control/catkin_generated/installspace/arm_controlConfig.cmake"
-    "/home/jonathan/Development/PythonProjects/arm/build/arm_control/catkin_generated/installspace/arm_controlConfig-version.cmake"
+    "/home/ywishahy/UBCOpenRobotics/arm/build/arm_control/catkin_generated/installspace/arm_controlConfig.cmake"
+    "/home/ywishahy/UBCOpenRobotics/arm/build/arm_control/catkin_generated/installspace/arm_controlConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/arm_control" TYPE FILE FILES "/home/jonathan/Development/PythonProjects/arm/src/arm_control/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/arm_control" TYPE FILE FILES "/home/ywishahy/UBCOpenRobotics/arm/src/arm_control/package.xml")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/jonathan/Development/PythonProjects/arm/build/arm_control/gtest/cmake_install.cmake")
+  include("/home/ywishahy/UBCOpenRobotics/arm/build/arm_control/gtest/cmake_install.cmake")
 
 endif()
 
@@ -157,5 +209,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/jonathan/Development/PythonProjects/arm/build/arm_control/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/ywishahy/UBCOpenRobotics/arm/build/arm_control/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

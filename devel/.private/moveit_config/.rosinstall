@@ -1,2 +1,2 @@
 - setup-file:
-    local-name: /home/jonathan/Development/PythonProjects/arm/devel/.private/moveit_config/setup.sh
+    local-name: /home/ywishahy/UBCOpenRobotics/arm/devel/.private/moveit_config/setup.sh

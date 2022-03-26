@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jonathan/Development/PythonProjects/arm/src/arm_urdf
+CMAKE_SOURCE_DIR = /home/ywishahy/UBCOpenRobotics/arm/src/arm_urdf
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jonathan/Development/PythonProjects/arm/build/arm_urdf
+CMAKE_BINARY_DIR = /home/ywishahy/UBCOpenRobotics/arm/build/arm_urdf
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -137,9 +137,9 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jonathan/Development/PythonProjects/arm/build/arm_urdf/CMakeFiles /home/jonathan/Development/PythonProjects/arm/build/arm_urdf/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ywishahy/UBCOpenRobotics/arm/build/arm_urdf/CMakeFiles /home/ywishahy/UBCOpenRobotics/arm/build/arm_urdf/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jonathan/Development/PythonProjects/arm/build/arm_urdf/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ywishahy/UBCOpenRobotics/arm/build/arm_urdf/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

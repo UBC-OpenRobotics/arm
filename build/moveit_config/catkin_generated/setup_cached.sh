@@ -7,9 +7,7 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/jonathan/Development/PythonProjects/arm/devel/.private/moveit_config:$CMAKE_PREFIX_PATH"
-export LD_LIBRARY_PATH="/home/jonathan/Development/PythonProjects/arm/devel/.private/moveit_config/lib:$LD_LIBRARY_PATH"
-export PKG_CONFIG_PATH="/home/jonathan/Development/PythonProjects/arm/devel/.private/moveit_config/lib/pkgconfig:$PKG_CONFIG_PATH"
-export PWD='/home/jonathan/Development/PythonProjects/arm/build/moveit_config'
-export ROSLISP_PACKAGE_DIRECTORIES="/home/jonathan/Development/PythonProjects/arm/devel/.private/moveit_config/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
-export ROS_PACKAGE_PATH="/home/jonathan/Development/PythonProjects/arm/src/moveit_config:$ROS_PACKAGE_PATH"
+export CMAKE_PREFIX_PATH="/home/ywishahy/UBCOpenRobotics/arm/devel/.private/moveit_config:$CMAKE_PREFIX_PATH"
+export PWD='/home/ywishahy/UBCOpenRobotics/arm/build/moveit_config'
+export ROSLISP_PACKAGE_DIRECTORIES="/home/ywishahy/UBCOpenRobotics/arm/devel/.private/moveit_config/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
+export ROS_PACKAGE_PATH="/home/ywishahy/UBCOpenRobotics/arm/src/moveit_config:$ROS_PACKAGE_PATH"

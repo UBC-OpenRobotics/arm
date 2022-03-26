@@ -1,6 +1,6 @@
-devel_space: /home/jonathan/Development/PythonProjects/arm/devel
+devel_space: /home/ywishahy/UBCOpenRobotics/arm/devel
 install: false
-install_space: /home/jonathan/Development/PythonProjects/arm/install
+install_space: /home/ywishahy/UBCOpenRobotics/arm/install
 profile: default
-source_space: /home/jonathan/Development/PythonProjects/arm/src
-workspace: /home/jonathan/Development/PythonProjects/arm
+source_space: /home/ywishahy/UBCOpenRobotics/arm/src
+workspace: /home/ywishahy/UBCOpenRobotics/arm
