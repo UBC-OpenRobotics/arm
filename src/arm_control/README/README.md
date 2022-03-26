@@ -77,10 +77,10 @@ goal_id:
     nsecs: 0
   id: ''
 goal:
-  arm_command: 'randomose'"
+  arm_command: 'random pose'"
 ```
 
 Mainly we care about this: ```
 goal:
-  arm_command: 'randomose'"
+  arm_command: 'random pose'"
 ``` 
