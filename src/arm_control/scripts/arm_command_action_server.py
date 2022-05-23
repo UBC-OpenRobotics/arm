@@ -69,6 +69,20 @@ def go_joint(group, goal):
     group.go(joints=goal, wait=True)
     group.stop()
 
+def plan_cartesian(move_group,dest=[1,1,1]):
+    waypoints = []
+
+    wpose = move_group.get_current_pose().pose
+    wpose.position.z = dest[2]  
+    wpose.position.y = dest[1]  
+    wpose.position.x = dest[0]
+    waypoints.append(copy.deepcopy(wpose))
+
+    (plan, fraction) = move_group.compute_cartesian_path(
+        waypoints, 0.01, 0.0  # waypoints to follow  # eef_step
+    )  # jump_threshold
+
+    return plan, fraction
 ##############################
 # action server class
 ##############################
@@ -97,6 +111,9 @@ class ArmCommandActionClass(object):
         rospy.loginfo("Action server started...")
     
     def init_moveit(self):
+        '''
+        @brief init the moveit commander, scene and movegroups for arm and arm gripper
+        '''
         moveit_commander.roscpp_initialize(sys.argv)
 
         self.robot = moveit_commander.RobotCommander()
@@ -112,11 +129,32 @@ class ArmCommandActionClass(object):
         self.gripper_group = moveit_commander.MoveGroupCommander(gripper_group_name)
 
     def execute_cb(self, goal):
+        '''
+        @brief execute callback function for action server, that takes action goal of
+            type ArmCommandAction and processes the message/values into a moveit pose to execute using go_ik()
+        '''
         rospy.loginfo('[arm command server] in arm action server execute command')
         feedback_message = ""
+        flag = False
+
         if(goal.arm_command == 'random pose'):
             feedback_message = f"Success: {go_ik(self.move_group, self.move_group.get_random_pose().pose)}"
-        else:
+            flag = True
+        elif("world pos" in goal.arm_command):
+            pos = goal.world_pos
+            print(goal.world_pos)
+
+            pose_goal = geometry_msgs.msg.Pose()
+            pose_goal.orientation.w = 1.0
+            if(len(pos) == 3):
+                pose_goal.position.x = pos[0]
+                pose_goal.position.y = pos[1]
+                pose_goal.position.z = pos[2]
+
+                feedback_message = f"Success: {go_ik(self.move_group, pose_goal)}"
+                flag = True
+                
+        if flag:
             feedback_message = "Invalid arm command!"
 
         self._feedback.feedback_message = feedback_message
