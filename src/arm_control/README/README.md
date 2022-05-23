@@ -62,10 +62,11 @@ roslaunch arm_control arm_command.launch
 For testing purposes, we can send an ArmCommandActionGoal from the terminal (acting as client to the server). Of course you muse initialize the server first (check above). In a new terminal : 
 
 ```bash
-source <path to arm>/arm/devel/setup.bash
+$ source <path to arm>/arm/devel/setup.bash
+```
 
-#send ArmCommandActionGoal to the action server 
-rostopic pub /arm_command_action_server/goal arm_control/ArmCommandActionGoal "header:
+```
+$ rostopic pub /arm_command_action_server/goal arm_control/ArmCommandActionGoal "header:
   seq: 0
   stamp:
     secs: 0
@@ -77,10 +78,19 @@ goal_id:
     nsecs: 0
   id: ''
 goal:
-  arm_command: 'random pose'"
+  arm_command: 'command string'
+  world_pos: [x,y,z]" 
 ```
 
-Mainly we care about this: ```
+
+Mainly we care about this:
+```
 goal:
-  arm_command: 'random pose'"
+  arm_command: 'command string'
+  world_pos: [x,y,z]" 
 ``` 
+
+## List of Commands
+
+* Random pose: `arm_command: 'random pose' `
+* Go to World Position (cartesian coordinate): `arm_command: 'world pos' world_pos: [float32,float32,float32]"  `

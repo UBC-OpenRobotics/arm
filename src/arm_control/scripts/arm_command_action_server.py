@@ -141,20 +141,18 @@ class ArmCommandActionClass(object):
             feedback_message = f"Success: {go_ik(self.move_group, self.move_group.get_random_pose().pose)}"
             flag = True
         elif("world pos" in goal.arm_command):
-            pos = goal.world_pos
             print(goal.world_pos)
 
             pose_goal = geometry_msgs.msg.Pose()
             pose_goal.orientation.w = 1.0
-            if(len(pos) == 3):
-                pose_goal.position.x = pos[0]
-                pose_goal.position.y = pos[1]
-                pose_goal.position.z = pos[2]
+            pose_goal.position.x = goal.world_pos[0]
+            pose_goal.position.y = goal.world_pos[1]
+            pose_goal.position.z = goal.world_pos[2]
 
-                feedback_message = f"Success: {go_ik(self.move_group, pose_goal)}"
-                flag = True
-                
-        if flag:
+            feedback_message = f"Success: {go_ik(self.move_group, pose_goal)}"
+            flag = True
+
+        if not flag:
             feedback_message = "Invalid arm command!"
 
         self._feedback.feedback_message = feedback_message
