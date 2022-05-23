@@ -141,8 +141,6 @@ class ArmCommandActionClass(object):
             feedback_message = f"Success: {go_ik(self.move_group, self.move_group.get_random_pose().pose)}"
             flag = True
         elif("world pos" in goal.arm_command):
-            print(goal.world_pos)
-
             pose_goal = geometry_msgs.msg.Pose()
             pose_goal.orientation.w = 1.0
             pose_goal.position.x = goal.world_pos[0]
