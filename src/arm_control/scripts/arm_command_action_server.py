@@ -24,7 +24,7 @@ from arm_control.msg import ArmCommandAction,ArmCommandFeedback, ArmCommandResul
 ros_node_name = "arm_command"  
 
 sample_time_out   = 60               # time out in seconds for Inverse Kinematic search
-sample_attempts   = 5                # num of planning attempts 
+sample_attempts   = 20                # num of planning attempts 
 goal_tolerance    = 0.001
 
 group_name = "arm"    
@@ -127,6 +127,12 @@ class ArmCommandActionClass(object):
         self.move_group.set_max_acceleration_scaling_factor(0.3)
 
         self.gripper_group = moveit_commander.MoveGroupCommander(gripper_group_name)
+    
+    def print_robot_cartesian_state(self):
+        print('ROBOT CARTESIAN STATE\n')
+        for link_name in self.robot.get_link_names()[1:4]:
+            link = self.robot.get_link(link_name)
+            print(link.name(),'\n',link.pose().pose)
 
     def execute_cb(self, goal):
         '''
@@ -136,16 +142,20 @@ class ArmCommandActionClass(object):
         rospy.loginfo('[arm command server] in arm action server execute command')
         feedback_message = ""
         flag = False
+        print(self.move_group.get_current_state())
+        self.print_robot_cartesian_state()
 
         if(goal.arm_command == 'random pose'):
-            feedback_message = f"Success: {go_ik(self.move_group, self.move_group.get_random_pose().pose)}"
+            rospy.loginfo('[arm command server] executing random pose command...')
+            pose_goal = self.move_group.get_random_pose().pose
+            print(pose_goal)
+            feedback_message = f"Success: {go_ik(self.move_group, pose_goal)}"
             flag = True
         elif("world pos" in goal.arm_command):
-            pose_goal = geometry_msgs.msg.Pose()
-            pose_goal.orientation.w = 1.0
-            pose_goal.position.x = goal.world_pos[0]
-            pose_goal.position.y = goal.world_pos[1]
-            pose_goal.position.z = goal.world_pos[2]
+            rospy.loginfo('[arm command server] executing world position command...')
+            pose_goal = goal.pose
+
+            print(pose_goal)
 
             feedback_message = f"Success: {go_ik(self.move_group, pose_goal)}"
             flag = True
