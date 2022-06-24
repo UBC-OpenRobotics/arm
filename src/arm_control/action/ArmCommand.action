@@ -1,4 +1,5 @@
 string arm_command     # Goal field
+geometry_msgs/Pose pose 
 ---                   # Separator
 bool success # Result field
 ---                   # Separator

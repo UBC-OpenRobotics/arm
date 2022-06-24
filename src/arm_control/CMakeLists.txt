@@ -8,16 +8,17 @@ project(arm_control)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
+  geometry_msgs 
   arm_urdf
   message_generation
   message_runtime
   roscpp 
-  geometry_msgs 
   std_msgs 
   trajectory_msgs 
   moveit_msgs 
   actionlib 
   actionlib_msgs
+  std_msgs                             
 )
 
 ## System dependencies are found with CMake's conventions
@@ -63,7 +64,6 @@ find_package(catkin REQUIRED COMPONENTS
 ## Generate services in the 'srv' folder
 add_service_files(
   FILES
-  ArmCommand.srv
 )
 
 ## Generate actions in the 'action' folder
@@ -116,14 +116,7 @@ catkin_package(
 #  LIBRARIES arm_control
 #  CATKIN_DEPENDS arm_urdf
 #  DEPENDS system_lib
-CATKIN_DEPENDS
-  message_runtime 
-  roscpp 
-  geometry_msgs 
-  std_msgs 
-  trajectory_msgs 
-  moveit_msgs 
-  actionlib_msgs
+CATKIN_DEPENDS message_runtime roscpp geometry_msgs std_msgs trajectory_msgs moveit_msgs actionlib_msgs
 )
 
 ###########
