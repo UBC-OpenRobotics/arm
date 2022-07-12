@@ -7,5 +7,5 @@
     <arg name="use_gazebo" value="$(arg use_gazebo)"/>
   </include> -->
   
-  <node name="arm_command_action_server" pkg="arm_control" type="arm_command_action_server.py"  respawn="false" output="screen"/>
+  <node name="arm_commander" pkg="arm_control" type="arm_commander.py"  respawn="false" output="screen"/>
 </launch>
