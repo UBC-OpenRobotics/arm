@@ -2,15 +2,10 @@ Symlinking /home/ywishahy/UBCOpenRobotics/arm/devel/include/arm_control/ArmComma
 Symlinking /home/ywishahy/UBCOpenRobotics/arm/devel/include/arm_control/ArmCommandResult.h
 Symlinking /home/ywishahy/UBCOpenRobotics/arm/devel/include/arm_control/ArmCommandAction.h
 Symlinking /home/ywishahy/UBCOpenRobotics/arm/devel/include/arm_control/ArmCommandGoal.h
-Symlinking /home/ywishahy/UBCOpenRobotics/arm/devel/include/arm_control/ArmCommand.h
 Symlinking /home/ywishahy/UBCOpenRobotics/arm/devel/include/arm_control/ArmCommandActionGoal.h
-Symlinking /home/ywishahy/UBCOpenRobotics/arm/devel/include/arm_control/ArmCommandResponse.h
 Symlinking /home/ywishahy/UBCOpenRobotics/arm/devel/include/arm_control/ArmCommandActionResult.h
-Symlinking /home/ywishahy/UBCOpenRobotics/arm/devel/include/arm_control/ArmCommandRequest.h
 Symlinking /home/ywishahy/UBCOpenRobotics/arm/devel/include/arm_control/ArmCommandActionFeedback.h
 Symlinking /home/ywishahy/UBCOpenRobotics/arm/devel/lib/python3/dist-packages/arm_control/__init__.py
-Symlinking /home/ywishahy/UBCOpenRobotics/arm/devel/lib/python3/dist-packages/arm_control/srv/_ArmCommand.py
-Symlinking /home/ywishahy/UBCOpenRobotics/arm/devel/lib/python3/dist-packages/arm_control/srv/__init__.py
 Symlinking /home/ywishahy/UBCOpenRobotics/arm/devel/lib/python3/dist-packages/arm_control/msg/_ArmCommandResult.py
 Symlinking /home/ywishahy/UBCOpenRobotics/arm/devel/lib/python3/dist-packages/arm_control/msg/_ArmCommandActionResult.py
 Symlinking /home/ywishahy/UBCOpenRobotics/arm/devel/lib/python3/dist-packages/arm_control/msg/_ArmCommandFeedback.py
@@ -32,8 +27,6 @@ Symlinking /home/ywishahy/UBCOpenRobotics/arm/devel/share/arm_control/msg/ArmCom
 Symlinking /home/ywishahy/UBCOpenRobotics/arm/devel/share/arm_control/msg/ArmCommandAction.msg
 Symlinking /home/ywishahy/UBCOpenRobotics/arm/devel/share/arm_control/msg/ArmCommandGoal.msg
 Symlinking /home/ywishahy/UBCOpenRobotics/arm/devel/share/gennodejs/ros/arm_control/_index.js
-Symlinking /home/ywishahy/UBCOpenRobotics/arm/devel/share/gennodejs/ros/arm_control/srv/_index.js
-Symlinking /home/ywishahy/UBCOpenRobotics/arm/devel/share/gennodejs/ros/arm_control/srv/ArmCommand.js
 Symlinking /home/ywishahy/UBCOpenRobotics/arm/devel/share/gennodejs/ros/arm_control/msg/ArmCommandAction.js
 Symlinking /home/ywishahy/UBCOpenRobotics/arm/devel/share/gennodejs/ros/arm_control/msg/ArmCommandGoal.js
 Symlinking /home/ywishahy/UBCOpenRobotics/arm/devel/share/gennodejs/ros/arm_control/msg/_index.js
@@ -42,10 +35,6 @@ Symlinking /home/ywishahy/UBCOpenRobotics/arm/devel/share/gennodejs/ros/arm_cont
 Symlinking /home/ywishahy/UBCOpenRobotics/arm/devel/share/gennodejs/ros/arm_control/msg/ArmCommandFeedback.js
 Symlinking /home/ywishahy/UBCOpenRobotics/arm/devel/share/gennodejs/ros/arm_control/msg/ArmCommandActionFeedback.js
 Symlinking /home/ywishahy/UBCOpenRobotics/arm/devel/share/gennodejs/ros/arm_control/msg/ArmCommandResult.js
-Symlinking /home/ywishahy/UBCOpenRobotics/arm/devel/share/common-lisp/ros/arm_control/srv/arm_control-srv.asd
-Symlinking /home/ywishahy/UBCOpenRobotics/arm/devel/share/common-lisp/ros/arm_control/srv/ArmCommand.lisp
-Symlinking /home/ywishahy/UBCOpenRobotics/arm/devel/share/common-lisp/ros/arm_control/srv/_package.lisp
-Symlinking /home/ywishahy/UBCOpenRobotics/arm/devel/share/common-lisp/ros/arm_control/srv/_package_ArmCommand.lisp
 Symlinking /home/ywishahy/UBCOpenRobotics/arm/devel/share/common-lisp/ros/arm_control/msg/ArmCommandFeedback.lisp
 Symlinking /home/ywishahy/UBCOpenRobotics/arm/devel/share/common-lisp/ros/arm_control/msg/_package_ArmCommandAction.lisp
 Symlinking /home/ywishahy/UBCOpenRobotics/arm/devel/share/common-lisp/ros/arm_control/msg/ArmCommandGoal.lisp
@@ -63,7 +52,6 @@ Symlinking /home/ywishahy/UBCOpenRobotics/arm/devel/share/common-lisp/ros/arm_co
 Symlinking /home/ywishahy/UBCOpenRobotics/arm/devel/share/common-lisp/ros/arm_control/msg/_package_ArmCommandFeedback.lisp
 Symlinking /home/ywishahy/UBCOpenRobotics/arm/devel/share/common-lisp/ros/arm_control/msg/ArmCommandActionResult.lisp
 Symlinking /home/ywishahy/UBCOpenRobotics/arm/devel/share/roseus/ros/arm_control/manifest.l
-Symlinking /home/ywishahy/UBCOpenRobotics/arm/devel/share/roseus/ros/arm_control/srv/ArmCommand.l
 Symlinking /home/ywishahy/UBCOpenRobotics/arm/devel/share/roseus/ros/arm_control/msg/ArmCommandAction.l
 Symlinking /home/ywishahy/UBCOpenRobotics/arm/devel/share/roseus/ros/arm_control/msg/ArmCommandActionResult.l
 Symlinking /home/ywishahy/UBCOpenRobotics/arm/devel/share/roseus/ros/arm_control/msg/ArmCommandResult.l

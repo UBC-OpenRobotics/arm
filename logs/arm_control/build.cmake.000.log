@@ -35,7 +35,7 @@ Not searching for unused variables given on the command line.
 [36m--[0m Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
 [36m--[0m Generating .msg files for action arm_control/ArmCommand /home/ywishahy/UBCOpenRobotics/arm/src/arm_control/action/ArmCommand.action
 Generating for action ArmCommand
-[36m--[0m arm_control: 7 messages, 1 services
+[36m--[0m arm_control: 7 messages, 0 services
 [36m--[0m Configuring done
 [36m--[0m Generating done
 [36m--[0m Build files have been written to: /home/ywishahy/UBCOpenRobotics/arm/build/arm_control

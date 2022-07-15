@@ -359,7 +359,7 @@ def grasp_test(arm_commander: ArmCommander,max_attempts=25):
     p.pose.orientation.w = 1.0 #leave other quat. values at default
     p.pose.position = arm_commander.get_end_effector_pose().position
 
-    p.pose.position.x -= 0.3
+    p.pose.position.x -= 0.5
     p.pose.position.z = 0.1
     arm_commander.scene.add_box("table", p, (0.5, 0.5, 0.25))
 
@@ -392,3 +392,4 @@ if __name__ == '__main__':
     arm_commander = ArmCommander()
 
     grasp_test(arm_commander,10)
+    # go_ik_test(arm_commander,10)

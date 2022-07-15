@@ -10,22 +10,22 @@ default_acceleration_scaling_factor: 0.1
 joint_limits:
   arm1_base_bridge_joint:
     has_velocity_limits: true
-    max_velocity: 0.5
+    max_velocity: 2.5
     has_acceleration_limits: false
     max_acceleration: 0
   arm1_base_fixed_base_joint:
     has_velocity_limits: true
-    max_velocity: 0.5
+    max_velocity: 2.5
     has_acceleration_limits: false
     max_acceleration: 0
   arm1_bridge_housing_joint:
     has_velocity_limits: true
-    max_velocity: 0.5
+    max_velocity: 2.5
     has_acceleration_limits: false
     max_acceleration: 0
   arm1_housing_wrist_link_joint:
     has_velocity_limits: true
-    max_velocity: 0.5
+    max_velocity: 2.5
     has_acceleration_limits: false
     max_acceleration: 0
   arm1_hub_left_finger_left_joint:
@@ -55,6 +55,6 @@ joint_limits:
     max_acceleration: 0
   arm1_wrist_link_wrist_cuff_joint:
     has_velocity_limits: true
-    max_velocity: 0.5
+    max_velocity: 2.5
     has_acceleration_limits: false
     max_acceleration: 0

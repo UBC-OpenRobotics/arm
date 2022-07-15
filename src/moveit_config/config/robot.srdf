@@ -23,29 +23,25 @@
     <!--GROUP STATES: Purpose: Define a named state for a particular group, in terms of joint values. This is useful to define states like 'folded arms'-->
     <group_state name="Default" group="arm">
         <joint name="arm1_base_bridge_joint" value="0"/>
-        <joint name="arm1_base_fixed_base_joint" value="1.5707"/>
+        <joint name="arm1_base_fixed_base_joint" value="-3.1415"/>
         <joint name="arm1_bridge_housing_joint" value="0"/>
         <joint name="arm1_housing_wrist_link_joint" value="0"/>
         <joint name="arm1_wrist_link_wrist_cuff_joint" value="0"/>
     </group_state>
     <group_state name="Folded" group="arm">
         <joint name="arm1_base_bridge_joint" value="0"/>
-        <joint name="arm1_base_fixed_base_joint" value="0"/>
+        <joint name="arm1_base_fixed_base_joint" value="0.1215"/>
         <joint name="arm1_bridge_housing_joint" value="-1.4796"/>
         <joint name="arm1_housing_wrist_link_joint" value="0"/>
         <joint name="arm1_wrist_link_wrist_cuff_joint" value="-1.4835"/>
     </group_state>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
-    <end_effector name="girpper" parent_link="arm1_wrist_cuff" group="gripper"/>
+    <end_effector name="girpper" parent_link="arm1_wrist_cuff" group="gripper" parent_group="arm"/>
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
-    <disable_collisions link1="arm1_base" link2="arm1_base_fixed" reason="Adjacent"/>
     <disable_collisions link1="arm1_base" link2="arm1_bridge" reason="Adjacent"/>
     <disable_collisions link1="arm1_base" link2="arm1_bridge2" reason="Never"/>
-    <disable_collisions link1="arm1_base" link2="arm1_camera_link" reason="Never"/>
+    <disable_collisions link1="arm1_base" link2="arm1_camera_link" reason="Adjacent"/>
     <disable_collisions link1="arm1_base" link2="arm1_housing" reason="Never"/>
-    <disable_collisions link1="arm1_base_fixed" link2="arm1_bridge" reason="Never"/>
-    <disable_collisions link1="arm1_base_fixed" link2="arm1_bridge2" reason="Never"/>
-    <disable_collisions link1="arm1_base_fixed" link2="arm1_camera_link" reason="Adjacent"/>
     <disable_collisions link1="arm1_bridge" link2="arm1_bridge2" reason="Adjacent"/>
     <disable_collisions link1="arm1_bridge" link2="arm1_camera_link" reason="Never"/>
     <disable_collisions link1="arm1_bridge" link2="arm1_housing" reason="Adjacent"/>
@@ -55,6 +51,9 @@
     <disable_collisions link1="arm1_bridge2" link2="arm1_housing" reason="Never"/>
     <disable_collisions link1="arm1_bridge2" link2="arm1_wrist_cuff" reason="Never"/>
     <disable_collisions link1="arm1_bridge2" link2="arm1_wrist_link" reason="Never"/>
+    <disable_collisions link1="arm1_camera_link" link2="arm1_housing" reason="Never"/>
+    <disable_collisions link1="arm1_camera_link" link2="arm1_wrist_cuff" reason="Never"/>
+    <disable_collisions link1="arm1_camera_link" link2="arm1_wrist_link" reason="Never"/>
     <disable_collisions link1="arm1_finger_left" link2="arm1_finger_right" reason="Never"/>
     <disable_collisions link1="arm1_finger_left" link2="arm1_finger_thumb" reason="Never"/>
     <disable_collisions link1="arm1_finger_left" link2="arm1_housing" reason="Never"/>

@@ -59,7 +59,6 @@
   <depend>moveit_msgs</depend>
   <depend>actionlib</depend>
   <depend>actionlib_msgs</depend>
-  
   <exec_depend>moveit_config</exec_depend>
 
 

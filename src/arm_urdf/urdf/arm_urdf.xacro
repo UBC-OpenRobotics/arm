@@ -6,7 +6,7 @@
     <xacro:macro name="arm" params="prefix">
 
         <!-- links -->
-        <link name="${prefix}_base_fixed">
+        <!-- <link name="${prefix}_base_fixed">
             <visual>
             <origin rpy="0 0 0" xyz="0 0 0.4"/>
             <geometry>
@@ -18,6 +18,27 @@
             <origin rpy="0 0 0" xyz="0 0 0.4"/>
             <geometry>
                 <box size="0.3 0.3 0.8"/>
+            </geometry>
+            </collision>
+
+            <inertial>
+            <mass value="0.5"/>
+            <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+            </inertial>
+        </link> -->
+
+        <link name="${prefix}_base_fixed">
+            <visual>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <box size="0.2 0.2 0.05"/>
+            </geometry>
+            </visual>
+
+            <collision>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <box size="0.18 0.18 0.03"/>
             </geometry>
             </collision>
 
@@ -181,8 +202,17 @@
 
         <!-- joints -->
         <!-- joint names defined like so: ${prefix}_<parent>_<child>_joint -->
-        <joint name="${prefix}_base_fixed_base_joint" type="revolute">
+        <!-- <joint name="${prefix}_base_fixed_base_joint" type="revolute">
             <origin rpy="0 ${radians(90)} 0" xyz="0.15 0 0.6"/>
+            <axis xyz="0 0 1"/>
+            <limit effort="1000.0" lower="${radians(-180)}" upper="${radians(180)}" velocity="2.5"/>
+            <parent link="${prefix}_base_fixed" />
+            <child link="${prefix}_base" />
+
+            <dynamics D="1" K="7000" mu_coulomb="0" mu_viscous="16" damping="0.003" friction="0.0"/>
+        </joint> -->
+        <joint name="${prefix}_base_fixed_base_joint" type="revolute">
+            <origin rpy="0 0 0" xyz="0 0 0.05"/>
             <axis xyz="0 0 1"/>
             <limit effort="1000.0" lower="${radians(-180)}" upper="${radians(180)}" velocity="2.5"/>
             <parent link="${prefix}_base_fixed" />

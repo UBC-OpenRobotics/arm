@@ -3,11 +3,11 @@
   <arg name="paused" default="false"/>
   <arg name="gazebo_gui" default="true"/>
   <arg name="initial_joint_positions" doc="Initial joint configuration of the robot"
-       default=" -J arm1_base_bridge_joint 0 -J arm1_base_fixed_base_joint 1.5707 -J arm1_bridge_housing_joint 0 -J arm1_housing_wrist_link_joint 0 -J arm1_wrist_link_wrist_cuff_joint 0"/>
+       default=" -J arm1_base_bridge_joint 0 -J arm1_base_fixed_base_joint -3.1415 -J arm1_bridge_housing_joint 0 -J arm1_housing_wrist_link_joint 0 -J arm1_wrist_link_wrist_cuff_joint 0"/>
 
   <!-- startup simulated world -->
-  <include file="$(find gazebo_worlds)/launch/world.launch">
-    <!-- <arg name="world_name" default="worlds/empty.world"/> -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" default="worlds/empty.world"/>
     <arg name="paused" value="true"/>
     <arg name="gui" value="$(arg gazebo_gui)"/>
   </include>

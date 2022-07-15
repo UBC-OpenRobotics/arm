@@ -129,10 +129,6 @@ file(INSTALL DESTINATION "/home/ywishahy/UBCOpenRobotics/arm/install" TYPE FILE 
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/arm_control/srv" TYPE FILE FILES "/home/ywishahy/UBCOpenRobotics/arm/src/arm_control/srv/ArmCommand.srv")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/arm_control/action" TYPE FILE FILES "/home/ywishahy/UBCOpenRobotics/arm/src/arm_control/action/ArmCommand.action")
 endif()
 

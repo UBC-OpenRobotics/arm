@@ -4,15 +4,10 @@ arm_control
 /home/ywishahy/UBCOpenRobotics/arm/devel/.private/arm_control/include/arm_control/ArmCommandResult.h /home/ywishahy/UBCOpenRobotics/arm/devel/include/arm_control/ArmCommandResult.h
 /home/ywishahy/UBCOpenRobotics/arm/devel/.private/arm_control/include/arm_control/ArmCommandAction.h /home/ywishahy/UBCOpenRobotics/arm/devel/include/arm_control/ArmCommandAction.h
 /home/ywishahy/UBCOpenRobotics/arm/devel/.private/arm_control/include/arm_control/ArmCommandGoal.h /home/ywishahy/UBCOpenRobotics/arm/devel/include/arm_control/ArmCommandGoal.h
-/home/ywishahy/UBCOpenRobotics/arm/devel/.private/arm_control/include/arm_control/ArmCommand.h /home/ywishahy/UBCOpenRobotics/arm/devel/include/arm_control/ArmCommand.h
 /home/ywishahy/UBCOpenRobotics/arm/devel/.private/arm_control/include/arm_control/ArmCommandActionGoal.h /home/ywishahy/UBCOpenRobotics/arm/devel/include/arm_control/ArmCommandActionGoal.h
-/home/ywishahy/UBCOpenRobotics/arm/devel/.private/arm_control/include/arm_control/ArmCommandResponse.h /home/ywishahy/UBCOpenRobotics/arm/devel/include/arm_control/ArmCommandResponse.h
 /home/ywishahy/UBCOpenRobotics/arm/devel/.private/arm_control/include/arm_control/ArmCommandActionResult.h /home/ywishahy/UBCOpenRobotics/arm/devel/include/arm_control/ArmCommandActionResult.h
-/home/ywishahy/UBCOpenRobotics/arm/devel/.private/arm_control/include/arm_control/ArmCommandRequest.h /home/ywishahy/UBCOpenRobotics/arm/devel/include/arm_control/ArmCommandRequest.h
 /home/ywishahy/UBCOpenRobotics/arm/devel/.private/arm_control/include/arm_control/ArmCommandActionFeedback.h /home/ywishahy/UBCOpenRobotics/arm/devel/include/arm_control/ArmCommandActionFeedback.h
 /home/ywishahy/UBCOpenRobotics/arm/devel/.private/arm_control/lib/python3/dist-packages/arm_control/__init__.py /home/ywishahy/UBCOpenRobotics/arm/devel/lib/python3/dist-packages/arm_control/__init__.py
-/home/ywishahy/UBCOpenRobotics/arm/devel/.private/arm_control/lib/python3/dist-packages/arm_control/srv/_ArmCommand.py /home/ywishahy/UBCOpenRobotics/arm/devel/lib/python3/dist-packages/arm_control/srv/_ArmCommand.py
-/home/ywishahy/UBCOpenRobotics/arm/devel/.private/arm_control/lib/python3/dist-packages/arm_control/srv/__init__.py /home/ywishahy/UBCOpenRobotics/arm/devel/lib/python3/dist-packages/arm_control/srv/__init__.py
 /home/ywishahy/UBCOpenRobotics/arm/devel/.private/arm_control/lib/python3/dist-packages/arm_control/msg/_ArmCommandResult.py /home/ywishahy/UBCOpenRobotics/arm/devel/lib/python3/dist-packages/arm_control/msg/_ArmCommandResult.py
 /home/ywishahy/UBCOpenRobotics/arm/devel/.private/arm_control/lib/python3/dist-packages/arm_control/msg/_ArmCommandActionResult.py /home/ywishahy/UBCOpenRobotics/arm/devel/lib/python3/dist-packages/arm_control/msg/_ArmCommandActionResult.py
 /home/ywishahy/UBCOpenRobotics/arm/devel/.private/arm_control/lib/python3/dist-packages/arm_control/msg/_ArmCommandFeedback.py /home/ywishahy/UBCOpenRobotics/arm/devel/lib/python3/dist-packages/arm_control/msg/_ArmCommandFeedback.py
@@ -34,8 +29,6 @@ arm_control
 /home/ywishahy/UBCOpenRobotics/arm/devel/.private/arm_control/share/arm_control/msg/ArmCommandAction.msg /home/ywishahy/UBCOpenRobotics/arm/devel/share/arm_control/msg/ArmCommandAction.msg
 /home/ywishahy/UBCOpenRobotics/arm/devel/.private/arm_control/share/arm_control/msg/ArmCommandGoal.msg /home/ywishahy/UBCOpenRobotics/arm/devel/share/arm_control/msg/ArmCommandGoal.msg
 /home/ywishahy/UBCOpenRobotics/arm/devel/.private/arm_control/share/gennodejs/ros/arm_control/_index.js /home/ywishahy/UBCOpenRobotics/arm/devel/share/gennodejs/ros/arm_control/_index.js
-/home/ywishahy/UBCOpenRobotics/arm/devel/.private/arm_control/share/gennodejs/ros/arm_control/srv/_index.js /home/ywishahy/UBCOpenRobotics/arm/devel/share/gennodejs/ros/arm_control/srv/_index.js
-/home/ywishahy/UBCOpenRobotics/arm/devel/.private/arm_control/share/gennodejs/ros/arm_control/srv/ArmCommand.js /home/ywishahy/UBCOpenRobotics/arm/devel/share/gennodejs/ros/arm_control/srv/ArmCommand.js
 /home/ywishahy/UBCOpenRobotics/arm/devel/.private/arm_control/share/gennodejs/ros/arm_control/msg/ArmCommandAction.js /home/ywishahy/UBCOpenRobotics/arm/devel/share/gennodejs/ros/arm_control/msg/ArmCommandAction.js
 /home/ywishahy/UBCOpenRobotics/arm/devel/.private/arm_control/share/gennodejs/ros/arm_control/msg/ArmCommandGoal.js /home/ywishahy/UBCOpenRobotics/arm/devel/share/gennodejs/ros/arm_control/msg/ArmCommandGoal.js
 /home/ywishahy/UBCOpenRobotics/arm/devel/.private/arm_control/share/gennodejs/ros/arm_control/msg/_index.js /home/ywishahy/UBCOpenRobotics/arm/devel/share/gennodejs/ros/arm_control/msg/_index.js
@@ -44,10 +37,6 @@ arm_control
 /home/ywishahy/UBCOpenRobotics/arm/devel/.private/arm_control/share/gennodejs/ros/arm_control/msg/ArmCommandFeedback.js /home/ywishahy/UBCOpenRobotics/arm/devel/share/gennodejs/ros/arm_control/msg/ArmCommandFeedback.js
 /home/ywishahy/UBCOpenRobotics/arm/devel/.private/arm_control/share/gennodejs/ros/arm_control/msg/ArmCommandActionFeedback.js /home/ywishahy/UBCOpenRobotics/arm/devel/share/gennodejs/ros/arm_control/msg/ArmCommandActionFeedback.js
 /home/ywishahy/UBCOpenRobotics/arm/devel/.private/arm_control/share/gennodejs/ros/arm_control/msg/ArmCommandResult.js /home/ywishahy/UBCOpenRobotics/arm/devel/share/gennodejs/ros/arm_control/msg/ArmCommandResult.js
-/home/ywishahy/UBCOpenRobotics/arm/devel/.private/arm_control/share/common-lisp/ros/arm_control/srv/arm_control-srv.asd /home/ywishahy/UBCOpenRobotics/arm/devel/share/common-lisp/ros/arm_control/srv/arm_control-srv.asd
-/home/ywishahy/UBCOpenRobotics/arm/devel/.private/arm_control/share/common-lisp/ros/arm_control/srv/ArmCommand.lisp /home/ywishahy/UBCOpenRobotics/arm/devel/share/common-lisp/ros/arm_control/srv/ArmCommand.lisp
-/home/ywishahy/UBCOpenRobotics/arm/devel/.private/arm_control/share/common-lisp/ros/arm_control/srv/_package.lisp /home/ywishahy/UBCOpenRobotics/arm/devel/share/common-lisp/ros/arm_control/srv/_package.lisp
-/home/ywishahy/UBCOpenRobotics/arm/devel/.private/arm_control/share/common-lisp/ros/arm_control/srv/_package_ArmCommand.lisp /home/ywishahy/UBCOpenRobotics/arm/devel/share/common-lisp/ros/arm_control/srv/_package_ArmCommand.lisp
 /home/ywishahy/UBCOpenRobotics/arm/devel/.private/arm_control/share/common-lisp/ros/arm_control/msg/ArmCommandFeedback.lisp /home/ywishahy/UBCOpenRobotics/arm/devel/share/common-lisp/ros/arm_control/msg/ArmCommandFeedback.lisp
 /home/ywishahy/UBCOpenRobotics/arm/devel/.private/arm_control/share/common-lisp/ros/arm_control/msg/_package_ArmCommandAction.lisp /home/ywishahy/UBCOpenRobotics/arm/devel/share/common-lisp/ros/arm_control/msg/_package_ArmCommandAction.lisp
 /home/ywishahy/UBCOpenRobotics/arm/devel/.private/arm_control/share/common-lisp/ros/arm_control/msg/ArmCommandGoal.lisp /home/ywishahy/UBCOpenRobotics/arm/devel/share/common-lisp/ros/arm_control/msg/ArmCommandGoal.lisp
@@ -65,7 +54,6 @@ arm_control
 /home/ywishahy/UBCOpenRobotics/arm/devel/.private/arm_control/share/common-lisp/ros/arm_control/msg/_package_ArmCommandFeedback.lisp /home/ywishahy/UBCOpenRobotics/arm/devel/share/common-lisp/ros/arm_control/msg/_package_ArmCommandFeedback.lisp
 /home/ywishahy/UBCOpenRobotics/arm/devel/.private/arm_control/share/common-lisp/ros/arm_control/msg/ArmCommandActionResult.lisp /home/ywishahy/UBCOpenRobotics/arm/devel/share/common-lisp/ros/arm_control/msg/ArmCommandActionResult.lisp
 /home/ywishahy/UBCOpenRobotics/arm/devel/.private/arm_control/share/roseus/ros/arm_control/manifest.l /home/ywishahy/UBCOpenRobotics/arm/devel/share/roseus/ros/arm_control/manifest.l
-/home/ywishahy/UBCOpenRobotics/arm/devel/.private/arm_control/share/roseus/ros/arm_control/srv/ArmCommand.l /home/ywishahy/UBCOpenRobotics/arm/devel/share/roseus/ros/arm_control/srv/ArmCommand.l
 /home/ywishahy/UBCOpenRobotics/arm/devel/.private/arm_control/share/roseus/ros/arm_control/msg/ArmCommandAction.l /home/ywishahy/UBCOpenRobotics/arm/devel/share/roseus/ros/arm_control/msg/ArmCommandAction.l
 /home/ywishahy/UBCOpenRobotics/arm/devel/.private/arm_control/share/roseus/ros/arm_control/msg/ArmCommandActionResult.l /home/ywishahy/UBCOpenRobotics/arm/devel/share/roseus/ros/arm_control/msg/ArmCommandActionResult.l
 /home/ywishahy/UBCOpenRobotics/arm/devel/.private/arm_control/share/roseus/ros/arm_control/msg/ArmCommandResult.l /home/ywishahy/UBCOpenRobotics/arm/devel/share/roseus/ros/arm_control/msg/ArmCommandResult.l
