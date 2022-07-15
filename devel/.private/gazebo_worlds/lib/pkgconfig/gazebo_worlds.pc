@@ -1,8 +1,0 @@
-prefix=/home/ywishahy/UBCOpenRobotics/arm/devel/.private/gazebo_worlds
-
-Name: gazebo_worlds
-Description: Description of gazebo_worlds
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

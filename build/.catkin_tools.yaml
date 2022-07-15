@@ -1,6 +1,0 @@
-devel_space: /home/ywishahy/UBCOpenRobotics/arm/devel
-install: false
-install_space: /home/ywishahy/UBCOpenRobotics/arm/install
-profile: default
-source_space: /home/ywishahy/UBCOpenRobotics/arm/src
-workspace: /home/ywishahy/UBCOpenRobotics/arm

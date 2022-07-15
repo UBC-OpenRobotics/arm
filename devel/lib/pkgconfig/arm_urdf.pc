@@ -1,1 +1,0 @@
-/home/ywishahy/UBCOpenRobotics/arm/devel/.private/arm_urdf/lib/pkgconfig/arm_urdf.pc

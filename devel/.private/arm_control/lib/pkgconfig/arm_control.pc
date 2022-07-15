@@ -1,8 +1,0 @@
-prefix=/home/ywishahy/UBCOpenRobotics/arm/devel/.private/arm_control
-
-Name: arm_control
-Description: Description of arm_control
-Version: 0.0.0
-Cflags: -I/home/ywishahy/UBCOpenRobotics/arm/devel/.private/arm_control/include
-Libs: -L${prefix}/lib 
-Requires: message_runtime roscpp geometry_msgs std_msgs trajectory_msgs moveit_msgs actionlib_msgs

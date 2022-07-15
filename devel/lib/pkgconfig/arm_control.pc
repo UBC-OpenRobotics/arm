@@ -1,1 +1,0 @@
-/home/ywishahy/UBCOpenRobotics/arm/devel/.private/arm_control/lib/pkgconfig/arm_control.pc

@@ -1,8 +1,0 @@
-prefix=/home/ywishahy/UBCOpenRobotics/arm/install
-
-Name: arm_urdf
-Description: Description of arm_urdf
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
