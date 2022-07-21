@@ -1,18 +1,13 @@
 #!/usr/bin/env python3.8
 from __future__ import print_function
-from mimetypes import init
-from time import sleep
-from six.moves import input
 import sys
 import rospy
 import moveit_commander
-from std_msgs.msg import String
 from moveit_commander.conversions import pose_to_list
-import random
-import math
-import actionlib
+import numpy as np
 from math import pi, tau, dist, fabs, cos
 import geometry_msgs
+from sensor_msgs.msg import JointState
 from geometry_msgs.msg import PoseStamped, Pose
 from moveit_commander import MoveGroupCommander,RobotCommander, PlanningSceneInterface
 from moveit_msgs.msg import Grasp, GripperTranslation, MoveItErrorCodes,DisplayTrajectory
@@ -60,9 +55,13 @@ class ArmCommander(object):
     plan = None # current joint trajectory plan
     pose_goal = None #current pose goal
 
-    sample_time_out   = 60            # time out in seconds for Inverse Kinematic search
-    sample_attempts   = 5             # num of planning attempts 
-    goal_tolerance    = 0.01
+    sample_time_out   = 10            # time out in seconds for Inverse Kinematic search
+    sample_attempts   = 10             # num of planning attempts 
+    goal_tolerance    = 0.1 
+
+    ARM_REF_FRAME = "arm1_base_fixed"
+    GRIPPER_REF_FRAME = "arm1_palm"
+    WORLD_FRAME = "world"
  
     def __init__(self):
         '''
@@ -82,7 +81,7 @@ class ArmCommander(object):
         self.arm_mvgroup.set_num_planning_attempts(self.sample_attempts)
         self.arm_mvgroup.set_goal_tolerance(self.goal_tolerance)
         self.arm_mvgroup.set_max_velocity_scaling_factor(1)
-        self.arm_mvgroup.set_max_acceleration_scaling_factor(0.3)
+        self.arm_mvgroup.set_max_acceleration_scaling_factor(1)
 
         self.gripper_mvgroup:MoveGroupCommander = moveit_commander.MoveGroupCommander("gripper")
         
@@ -95,6 +94,10 @@ class ArmCommander(object):
         print("============ End effector: %s" % eef_link)
 
         print("============ Robot Groups:", self.robot.get_group_names())
+
+        print("============ Robot Links:", self.robot.get_link_names())
+
+        print("============ Robot Joints:", self.robot.get_active_joint_names())
 
         print("============ Printing robot state")
         print(self.robot.get_current_state())
@@ -143,7 +146,7 @@ class ArmCommander(object):
         return self.plan[0]
 
     @staticmethod
-    def go_joint(group, goal=None):
+    def go_joint(group : MoveGroupCommander, goal=None):
         """
         @brief Makes the group's joints go to joint angles specified by goal,
         blocks until goal is reached within tolerance or exit if goal joint
@@ -182,214 +185,3 @@ class ArmCommander(object):
             print("End effector result:\n",actual)
             print('\n\n')
             print('Goal within tolerance: %s : %s' % (self.goal_tolerance,all_close(goal,actual,self.goal_tolerance)))
-
-
-####################
-# Testing functions
-# todo: move to another file later
-####################
-def go_ik_test(arm_commander: ArmCommander,iterations):
-    poses = []
-    for _ in range(iterations):
-        arm_commander.go_ik()
-        poses.append(arm_commander.pose_goal)
-        arm_commander.compare_eef_pose_states()
-    for pose in poses:
-        arm_commander.go_ik(pose)
-        arm_commander.compare_eef_pose_states()
-
-def pick_object_test(arm_commander: ArmCommander):
-    # clean the scene
-    arm_commander.scene.remove_world_object("pole")
-    arm_commander.scene.remove_world_object("table")
-    arm_commander.scene.remove_world_object("part")
-
-    # publish a demo scene
-    p = PoseStamped()
-    p.header.frame_id = arm_commander.robot.get_planning_frame()
-    p.pose.position.x = 0.7
-    p.pose.position.y = -0.4
-    p.pose.position.z = 0.85
-    p.pose.orientation.w = 1.0
-    arm_commander.scene.add_box("pole", p, (0.3, 0.1, 1.0))
-
-    p.pose.position.y = -0.2
-    p.pose.position.z = 0.175
-    arm_commander.scene.add_box("table", p, (0.5, 1.5, 0.35))
-
-    p.pose.position.x = 0.6
-    p.pose.position.y = -0.7
-    p.pose.position.z = 0.5
-    arm_commander.scene.add_box("part", p, (0.15, 0.1, 0.3))
-
-
-############################
-# Arm and gripper grasp object test
-# the following code is adapated from 
-# https://github.com/AIWintermuteAI/ros-moveit-arm/blob/master/my_arm_xacro/pick/pick.py
-# with some minor changes
-###########################
-def grasp_test(arm_commander: ArmCommander,max_attempts=25):
-    # Get the gripper posture as a JointTrajectory
-    def make_gripper_posture(arm_commander, joint_positions):
-        # Initialize the joint trajectory for the gripper joints
-        t = JointTrajectory()
-        
-        # Set the joint names to the gripper joint names
-        t.joint_names = arm_commander.robot.get_joint_names(arm_commander.arm_mvgroup.get_name())
-        
-        # Initialize a joint trajectory point to represent the goal
-        tp = JointTrajectoryPoint()
-        
-        # Assign the trajectory joint positions to the input positions
-        tp.positions = joint_positions
-        
-        # Set the gripper effort
-        tp.effort = [1.0]
-        
-        tp.time_from_start = rospy.Duration(1.0)
-        
-        # Append the goal point to the trajectory points
-        t.points.append(tp)
-        
-        # Return the joint trajectory
-        return t
-    
-    # Generate a gripper translation in the direction given by vector
-    def make_gripper_translation(arm_commander, min_dist, desired, vector):
-        # Initialize the gripper translation object
-        g = GripperTranslation()
-        
-        # Set the direction vector components to the input
-        g.direction.vector.x = vector[0]
-        g.direction.vector.y = vector[1]
-        g.direction.vector.z = vector[2]
-        
-        # The vector is relative to the gripper frame
-        g.direction.header.frame_id = arm_commander.arm_mvgroup.get_pose_reference_frame()
-        print('gripper frame: %s\n' % g.direction.header.frame_id)
-        
-        # Assign the min and desired distances from the input
-        g.min_distance = min_dist
-        g.desired_distance = desired
-        
-        return g
-
-    # Generate a list of possible grasps
-    def make_grasps(arm_commander, initial_pose_stamped, allowed_touch_objects):
-        # Initialize the grasp object
-        g = Grasp()
-        
-        # Set the pre-grasp and grasp postures appropriately
-        g.pre_grasp_posture = make_gripper_posture(arm_commander, [0,0,0,0,0,0])
-        g.grasp_posture = make_gripper_posture(arm_commander, [2,2,2,2,2,2])
-                
-        # Set the approach and retreat parameters as desired
-        g.pre_grasp_approach = make_gripper_translation(arm_commander, 0.1, 0.1, [0, 1, 0])
-        g.post_grasp_retreat = make_gripper_translation(arm_commander, 0.1, 0.15, [1, 0, 0])
-        
-        # Set the first grasp pose to the input pose
-        g.grasp_pose = initial_pose_stamped
-    
-        ideal_roll = 0
-        ideal_pitch = 0
-        ideal_yaw = 0
-        
-        step_size = 0.1
-        idx = 0.1
-        idx_roll = ideal_roll + idx
-        idx_pitch = ideal_pitch + idx
-        idx_yaw = ideal_yaw + idx
-        roll_vals = []
-        pitch_vals = []
-        yaw_vals = []
-        while idx >= -0.1:
-            roll_vals.append(idx_roll)
-            pitch_vals.append(idx_pitch)
-            yaw_vals.append(idx_yaw)
-            idx -= step_size
-            idx_roll -= step_size
-            idx_pitch -= step_size
-            idx_yaw -= step_size
-
-        # A list to hold the grasps
-        grasps = []
-        
-        # Generate a grasp for each roll pitch and yaw angle
-        for r in roll_vals:
-            for y in yaw_vals:
-                for p in pitch_vals:
-                    # Create a quaternion from the Euler angles
-                    q = quaternion_from_euler(r, p, y)
-                    
-                    # Set the grasp pose orientation accordingly
-                    g.grasp_pose.pose.orientation.x = q[0]
-                    g.grasp_pose.pose.orientation.y = q[1]
-                    g.grasp_pose.pose.orientation.z = q[2]
-                    g.grasp_pose.pose.orientation.w = q[3]
-                    
-                    # Set and id for this grasp (simply needs to be unique)
-                    g.id = str(len(grasps))
-                    
-                    # Set the allowed touch objects to the input list
-                    g.allowed_touch_objects = allowed_touch_objects
-                    
-                    # Don't restrict contact force
-                    g.max_contact_force = 0
-                    
-                    # Degrade grasp quality for increasing pitch angles
-                    g.grasp_quality = 1.0 - abs(p)
-                    
-                    # Append the grasp to the list
-                    grasps.append(deepcopy(g))
-                    
-        print("Generated " + g.id + " poses")
-        # Return the list
-        return grasps
-    
-    #clean scene
-    arm_commander.scene.remove_world_object("part")
-    arm_commander.scene.remove_world_object("table")
-
-    #place part
-    p = PoseStamped()
-    p.header.frame_id = arm_commander.robot.get_planning_frame() #todo: test/change reference frame for these objects
-
-    print('placing part in scene with reference frame %s\n' % p.header.frame_id)
-    p.pose.orientation.w = 1.0 #leave other quat. values at default
-    p.pose.position = arm_commander.get_end_effector_pose().position
-
-    p.pose.position.x -= 0.5
-    p.pose.position.z = 0.1
-    arm_commander.scene.add_box("table", p, (0.5, 0.5, 0.25))
-
-    p.pose.position.z = 0.25
-    arm_commander.scene.add_box("part", p, (0.15, 0.1, 0.15))
-
-    print('part placed\n')
-
-    #generate a list of grasp approaches from current eef pose
-    init_pose = PoseStamped()
-    init_pose.header.frame_id = arm_commander.arm_mvgroup.get_pose_reference_frame()
-    init_pose.pose = arm_commander.get_end_effector_pose()
-
-    grasps = make_grasps(arm_commander, init_pose, 'part')
-
-    #attempt pick operation and report success/failure
-    result = None
-    n_attempts = 0
-    while result != MoveItErrorCodes.SUCCESS and n_attempts < max_attempts:
-        n_attempts += 1
-        rospy.loginfo("Pick attempt: " +  str(n_attempts))
-        result = arm_commander.arm_mvgroup.pick('part',grasps)
-        rospy.sleep(0.2)
-
-
-####################
-#Main loop for testing
-####################
-if __name__ == '__main__':
-    arm_commander = ArmCommander()
-
-    grasp_test(arm_commander,10)
-    # go_ik_test(arm_commander,10)

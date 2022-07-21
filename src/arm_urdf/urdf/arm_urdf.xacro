@@ -29,16 +29,16 @@
 
         <link name="${prefix}_base_fixed">
             <visual>
-            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <origin rpy="0 0 0" xyz="0 0 0.025"/>
             <geometry>
-                <box size="0.2 0.2 0.05"/>
+                <box size="0.4 0.4 0.05"/>
             </geometry>
             </visual>
 
             <collision>
-            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <origin rpy="0 0 0" xyz="0 0 0.025"/>
             <geometry>
-                <box size="0.18 0.18 0.03"/>
+                <box size="0.4 0.4 0.05"/>
             </geometry>
             </collision>
 
